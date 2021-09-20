@@ -15,7 +15,6 @@ function FormHeader() {
 
 	return (
 		<div className="formheader">
-			{/* Header Top */}
 			<div className="formheader__img__container">
 				<img  width="100px" src={blackimg} alt="img" />
 			
