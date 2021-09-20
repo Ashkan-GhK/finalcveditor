@@ -1,0 +1,64 @@
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  border-bottom: solid 1px rgba(160, 157, 157, 0.406);
+}
+
+.topBar__left {
+  display: flex;
+  width: 50%;
+  margin: 20px;
+  justify-content: space-evenly;
+}
+
+.topBar__left__button {
+  display: flex;
+  justify-content: space-between;
+  height: 35px;
+  box-shadow: 2px solid rgba(69, 69, 69, 0.39);
+}
+
+.topBar__left__button button {
+  border: #ffffff;
+  box-shadow: 2px solid rgba(69, 69, 69, 0.39);
+  padding: 10px;
+}
+.cvtemp {
+  background-color: #08b27d;
+  color: white;
+  border-radius: 5px;
+}
+
+.topBar__left__input {
+  display: flex;
+  justify-content: space-between;
+  height: 35px;
+  border-radius: 5px;
+}
+
+.topBar__right {
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+  margin: 20px;
+}
+.sharebtn {
+  background-color: #4373fe;
+  color: white;
+  border-radius: 5px;
+  width: 80px;
+}
+
+.downloadbtn {
+  background-color: #08b27d;
+  color: white;
+  border-radius: 5px;
+  width: 180px;
+}
+
+.savebtn {
+  background-color: #4373fe;
+  color: white;
+  border-radius: 5px;
+}

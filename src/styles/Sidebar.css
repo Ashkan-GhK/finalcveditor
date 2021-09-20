@@ -1,0 +1,19 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 14%;
+  padding-top: 5px;
+  border-right: solid 1px rgba(128, 128, 128, 0.338);
+}
+
+.sidebar__section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: ;
+  border-bottom: 1px solid rgba(147, 141, 141, 0.392);
+  font-weight: 400;
+  color: gray;
+}

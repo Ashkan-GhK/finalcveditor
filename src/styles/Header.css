@@ -1,0 +1,11 @@
+.header {
+    background-color: #4372FE;
+    height: 50px;
+    
+}
+ 
+
+.header, h4 {
+    padding-top: 10px;
+    padding-left: 10px;
+}
