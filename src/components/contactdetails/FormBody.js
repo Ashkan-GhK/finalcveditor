@@ -6,19 +6,24 @@ function FormBody() {
 		<div className="formbody">
 			<div className="formbody__input__container">
 				<div className="formbody__input">
-					<input type="text" />
+				        <label for="fname">First Name</label><br />
+					<input type="text" id="fname" name="fname" />
 				</div>
 				<div className="formbody__input">
-					<input type="text" />
+				        <label for="lname">Last Name</label> <br />
+					<input type="text" id="lname"  name="lname"/>
 				</div>
 				<div className="formbody__input">
-					<input type="text" />
+				        <label for="phone">Phone</label> <br />
+					<input type="text" id="phone" name="phone" />
 				</div>
 				<div className="formbody__input">
-					<input type="text" />
+				        <label for="email">Email</label> <br />
+					<input type="email" id="email" name="email"/>
 				</div>
 				<div className="formbody__input">
-					<input type="text" />
+				        <label for="address">Address</label> <br />
+					<input type="text" id="address" name="address"/>
 				</div>
 			</div>
 			

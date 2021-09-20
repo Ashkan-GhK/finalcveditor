@@ -2,3 +2,37 @@
   display: flex;
   width: 100%;
 }
+
+.formbody__input__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+}
+
+.formbody__input {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+
+.formbody__input label {
+  color: rgba(128, 128, 128);
+  font-weight: 600;
+}
+
+.formbody__input input {
+  height: 40px;
+  border: 1px solid rgba(128, 128, 128, 0.495);
+  font-weight: 800;
+}
+
+input:focus {
+  outline: none;
+}
