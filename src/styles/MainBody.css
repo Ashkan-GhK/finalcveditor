@@ -1,7 +1,7 @@
 body {
   margin: 0;
   height: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .mainBody {
   display: flex;
@@ -51,7 +51,6 @@ body {
   width: 90%;
   box-shadow: 2px solid gray;
   background-color: #ffff;
-  overflow-y: scroll;
 }
 
 .mainbody__right {

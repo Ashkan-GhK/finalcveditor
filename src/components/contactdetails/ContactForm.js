@@ -5,6 +5,10 @@ import FormHeader from './FormHeader'
 
 function ContactForm() {
 
+
+	const handleClick = (event) => {
+		event.preventDefault();
+	};
 	
 
 
@@ -26,7 +30,9 @@ function ContactForm() {
 
 			{/* Form Footer */}
 			<div className="form__footer">
-				
+				<div className="form__footer__btn">
+				<button onClick={handleClick}>Next</button>
+				</div>
 			</div>
 			
 		</form>
