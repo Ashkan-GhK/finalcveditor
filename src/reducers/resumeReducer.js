@@ -1,9 +1,10 @@
 const initState = {
 	input: 'Alex',
-	lastName: ' Gakan',
-	phoneNum: '+447779277799'
-	
-
+	lastName: 'Gakan',
+	phoneNum: '+447779277799',
+	email: 'alex@gmail.com',
+	address: '42 B Fulham Palace Rd w69ph',
+	objective: 'Would like to gain the necessary experience to hopefully become Operations Manager of all services running across the platform'
 }
 
 const Reducer = (state = initState,action) => {
@@ -23,6 +24,21 @@ const Reducer = (state = initState,action) => {
 			        ...state,
 				phoneNum: action.phoneNum
 			}		
+		case "SHOW_EMAIL_INPUT":
+			return {
+				...state,
+				email: action.email
+			}		
+		case "SHOW_ADDRESS_INPUT":
+			return {
+				...state,
+				address: action.address
+			}	
+		case "SHOW_OBJECTIVE":
+			return {
+				...state,
+				objective: action.objective
+			}	
 	default:
 		return state
 	}

@@ -39,7 +39,7 @@ body {
   height: 100vh;
   width: 43%;
   box-shadow: 1px solid gray;
-  background-color: #f9f9f9;
+  /* background-color: #f9f9f9; */
 }
 
 .editor__preview {
@@ -50,7 +50,7 @@ body {
   height: 90%;
   width: 90%;
   box-shadow: 2px solid gray;
-  background-color: #ffff;
+  /* background-color: #ffff; */
 }
 
 .mainbody__right {

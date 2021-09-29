@@ -4,6 +4,7 @@
   flex-direction: column;
   width: 100%;
   overflow-y: scroll;
+  background-color: #ffffffff;
 }
 
 .form__top {

@@ -1,0 +1,64 @@
+.objectives {
+  width: 98%;
+  height: 60%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+.objectives__container {
+  width: 100%;
+}
+
+.objectives__container__content {
+  width: 100%;
+}
+
+.objectives__container__content > textarea {
+  cursor: text;
+  width: 90%;
+  margin: 20px;
+  resize: none;
+  box-shadow: rgb(0 0 0 / 3%) 0px 2px 4px 0px;
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(225, 225, 225);
+  padding: 0px 15px;
+  min-height: 8em;
+  border-radius: 3px;
+  line-height: 1;
+}
+
+.objectives__container__content textarea:focus {
+  outline: none;
+}
+
+.objectives__buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 60px;
+  margin: 20;
+  border-top: 0.3px solid rgba(128, 128, 128, 0.228);
+}
+
+.goback__button button {
+  margin: 20px;
+  width: 100px;
+  height: 40px;
+  border: 1px solid rgba(128, 128, 128, 0.228);
+  color: #4373fe;
+  background-color: #ffff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.next__button button {
+  margin: 20px;
+  width: 100px;
+  height: 40px;
+  border: 1px solid rgba(128, 128, 128, 0.228);
+  background-color: #4373fe;
+  color: #ffff;
+  border-radius: 4px;
+  cursor: pointer;
+}

@@ -7,6 +7,12 @@ function ResumeOne() {
 	const showUserInput = useSelector(state => state.input);
 	const showUserLastName = useSelector(state => state.lastName);
 	const showPhoneNum = useSelector(state => state.phoneNum);
+	const showEmail = useSelector(state => state.email);
+	const showAddress = useSelector(state => state.address);
+	const showObjective = useSelector(state => state.objective);
+
+	
+	
 
 
 	return (
@@ -23,19 +29,18 @@ function ResumeOne() {
 				        <div className="resumeone__header__right">
 					        <div className="resumeone__header__right__content">
 						        <span>Email</span>
-						        <p>
-							alex@gmail.com
-							</p>
+							{showEmail.length-1 >= 0 ? showEmail : "alex@gmail.com"}
+
 					         </div>
 					        <div className="resumeone__header__right__content break">
 						        <span>Address</span>
-						        <p>42 B Fulham Palace Road w6 9ph</p>
+							{showAddress.length-1 >= 0 ? showAddress : "42 Fulham Palace Rd W69PH"}
 					        </div>
 					        <div className="resumeone__header__right__content">
 						        <span>Phone</span>
 							
 							{showPhoneNum.length-1 >= 0 ? showPhoneNum : "+447779277799"}
-
+							
 					        </div>
 				        </div>
 					<div className="resumeone__header__img">
@@ -50,7 +55,7 @@ function ResumeOne() {
 						<p>Objective</p>
 					</div>
 					<div className="objective__content">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					{showObjective.length-1 >= 0 ? showObjective : "Would like to gain the necessary experience to hopefully become Operations Manager of all services running across the platform "}
 					</div>
 				</div>				
 			</section>
@@ -86,7 +91,7 @@ function ResumeOne() {
 					</div>
 					<div className="workexperience__content__right">
 						<div className="workexperience__content__right__text">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
 						</div>
 					</div>
 					
@@ -109,6 +114,7 @@ function ResumeOne() {
 							</div>
 							<div style={{fontWeight:"bolder"}}>
 							        <p>London</p>
+								
 							</div>
 						</div>
 						
@@ -122,7 +128,7 @@ function ResumeOne() {
 					</div>
 					<div className="workexperience__content__right">
 						<div className="workexperience__content__right__text">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 						</div>
 					</div>
 					
@@ -132,7 +138,7 @@ function ResumeOne() {
 
 			<section className="skills__Language">
 				<div className="skills__container">
-				      <p style={{marginTop:"20px"}}>Skils</p>
+				      <p style={{marginTop:"20px"}}>Skills</p>
 				      <div className="skills__container__list">
 					      <div className="skills__container__list__item">
 						      <div><li>Project management:</li></div>

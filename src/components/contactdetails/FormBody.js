@@ -46,7 +46,6 @@ function FormBody() {
 
 	//PHONE NUMBER
 
-
 	const [phoneNum, setPhoneNum] = useState("");
 	const [phoneNumVal, setPhoneNumVal] = useState("");
 
@@ -64,6 +63,50 @@ function FormBody() {
 		dispatch({
 			type: 'SHOW_PHONENUM_INPUT',
 			phoneNum : phoneNum
+		})
+	}
+
+
+	//EMAIL
+
+	const [email, setEmail] = useState("");
+	const [emailVal, setEmailVal] = useState("");
+
+	const emailUserInput = event => {
+		setEmail(event.target.value);
+	   };
+   
+	   let logEmailVal = () => {
+		   console.log(emailVal)
+	           setEmailVal(email);
+	   };
+
+
+	function showEmail (email) {
+		dispatch({
+			type: 'SHOW_EMAIL_INPUT',
+			email : email
+		})
+	}
+
+	//ADDRESS
+	const [address, setAddress] = useState("");
+	const [addressVal, setAddressVal] = useState("");
+
+	const addressInput = event => {
+		setAddress(event.target.value);
+	   };
+   
+	   let logAddressVal = () => {
+		   console.log(addressVal)
+	     setAddressVal(address);
+	   };
+
+
+	function showAddress (address) {
+		dispatch({
+			type: 'SHOW_ADDRESS_INPUT',
+			address : address
 		})
 	}
 
@@ -89,15 +132,19 @@ function FormBody() {
 				        <label for="phone">Phone</label> <br />
 					<input onChange={phoneNumInput} type="text" id="phone" name="phone" maxLength="16"/>
 					<p onChange={logPhoneNumVal}>{showPhoneNum(phoneNum)}</p>
-
+					
 				</div>
 				<div className="formbody__input">
 				        <label for="email">Email</label> <br />
-					<input type="email" id="email" name="email"/>
+					<input onChange={emailUserInput} type="email" id="email" name="email" maxLength="32"/>
+					<p onChange={logEmailVal}>{showEmail(email)}</p>
+
 				</div>
 				<div className="formbody__input">
 				        <label for="address">Address</label> <br />
-					<input type="text" id="address" name="address"/>
+					<input onChange={addressInput} type="text" id="address" name="address" maxLength="38"/>
+					<p onChange={logAddressVal}>{showAddress(address)}</p>
+
 				</div>
 			</div>
 			
