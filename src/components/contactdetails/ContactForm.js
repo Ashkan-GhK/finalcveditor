@@ -10,7 +10,7 @@ function ContactForm() {
 		event.preventDefault();
 	};
 	
-
+	
 
 	return (
 		<form className="form">

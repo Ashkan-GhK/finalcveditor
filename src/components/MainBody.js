@@ -16,6 +16,7 @@ import Education from '../components/education/Eduacation';
 import Language from '../components/language/Language';
 import Interest from '../components/interest/Interest';
 import Skills from '../components/skills/Skills';
+import ResumeOne from './resumes/resumeone/ResumeOne';
 
 
 
@@ -64,7 +65,7 @@ return (
             {/* Right Section */}
             <div className="mainbody__right">
                 <div className="cv__preview">
-                    
+                    <ResumeOne />
                 </div>
             </div>
 

@@ -1,0 +1,192 @@
+.resumeone * {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  line-height: 1.5;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+.resumeone {
+  display: flex;
+  color: #010101;
+  width: 100%;
+  height: auto;
+  font-size: 16px !important;
+  font-weight: 300;
+  line-height: 20px;
+  overflow: visible;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+/* Header */
+
+.resumeone__header {
+  display: flex;
+  margin: 14px;
+  height: 100px;
+  width: 96%;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px dotted #3770b1;
+}
+
+.resumeone__header__left {
+  font-weight: bold;
+  width: 50%;
+  font-size: 2rem;
+  color: #3770b1;
+}
+
+.resumeone__header__right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 75%;
+}
+
+.resumeone__header__right__container {
+  display: flex;
+  position: relative;
+  height: 100px;
+  width: 60%;
+  margin-top: 10px;
+  word-wrap: break-word !important;
+}
+.break {
+  word-break: break-all;
+}
+
+.resumeone__header__right__content {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.resumeone__header__right__content span {
+  margin-right: 10px;
+  font-weight: bold;
+  word-break: normal;
+  height: 100%;
+}
+
+.resumeone__header__img {
+  display: flex;
+  height: 90%;
+  margin-left: 10px;
+}
+
+.resumeone__header__img img {
+  margin-bottom: 10px;
+}
+
+/* Section one */
+
+.objective {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 96%;
+  border-bottom: 1px dotted #3770b1;
+  margin: 16px;
+}
+
+.objective__container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.objective__title {
+  font-weight: bolder;
+}
+
+.objective__content {
+  display: flex;
+  font-size: 17px;
+}
+
+/* Section two */
+
+.workexperience {
+  height: auto;
+  width: 96%;
+  margin: 16px;
+}
+
+.workexperience__title {
+  font-weight: bolder;
+}
+.workexperience__content {
+  display: flex;
+  width: 100%;
+}
+
+.workexperience__content__left {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.workexperience__content__right {
+  width: 70%;
+}
+
+.workexperience__content__left__job {
+  font-weight: bolder;
+  font-size: 1.1rem;
+  color: #3770b1;
+}
+
+.workexperience__content__left__place {
+  display: flex;
+  width: 100%;
+}
+
+.workexperience__content__left__place > div > span {
+  margin-right: 5px;
+}
+
+.workexperience__content__left__date {
+  display: flex;
+}
+
+/* section five */
+
+.skills__Language {
+  display: flex;
+  height: auto;
+  width: 96%;
+  margin: 16px;
+  border-bottom: 1px dotted #3770b1;
+}
+
+.skills__container {
+  width: 100%;
+  border-top: 1px dotted #3770b1;
+  margin-right: 50px;
+}
+.language__container {
+  width: 100%;
+  border-top: 1px dotted #3770b1;
+}
+
+.skills__container__list__item {
+  display: flex;
+}
+.skills__container__list__item li {
+  font-weight: bolder;
+}
+
+.interest {
+  display: flex;
+  height: auto;
+  width: 96%;
+  margin: 16px;
+}
