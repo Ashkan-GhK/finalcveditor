@@ -1,22 +1,28 @@
 import '../resumeone/ResumeOne.css';
+import { useState } from 'react';
 import blackimg from '../../../image/blackimg.png';
-
+import {useSelector} from 'react-redux';
 
 function ResumeOne() {
+	const[name] =useState("Alex")
+
+	const showUserInput = useSelector(state => state.input);
 	
 	return (
 		<div className="resumeone">
 			<header className="resumeone__header">
 				<div className="resumeone__header__left">
 					<div className="resumeone__name">
-					 <p>Alex Gakan</p>
+					 <p>{showUserInput.length-1 >= 0 ? showUserInput : "Alex"} Gakan</p>
 					</div>
 				</div>
 				<div className="resumeone__header__right__container">
 				        <div className="resumeone__header__right">
 					        <div className="resumeone__header__right__content">
 						        <span>Email</span>
-						        <p>Alex@gmail.com</p>
+						        <p>
+							alex@gmail.com
+							</p>
 					         </div>
 					        <div className="resumeone__header__right__content break">
 						        <span>Address</span>
