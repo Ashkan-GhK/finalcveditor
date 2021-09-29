@@ -118,6 +118,7 @@
   height: auto;
   width: 96%;
   margin: 16px;
+  border-bottom: 1px dotted #3770b1;
 }
 
 .workexperience__title {

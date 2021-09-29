@@ -1,5 +1,9 @@
 const initState = {
-	input: 'Alex'
+	input: 'Alex',
+	lastName: ' Gakan',
+	phoneNum: '+447779277799'
+	
+
 }
 
 const Reducer = (state = initState,action) => {
@@ -9,6 +13,16 @@ const Reducer = (state = initState,action) => {
 				...state,
 				input: action.input
 			}
+		case "SHOW_LASTNAME_INPUT":
+			return {
+				...state,
+				lastName: action.lastName
+			}
+		case "SHOW_PHONENUM_INPUT":
+			return {
+			        ...state,
+				phoneNum: action.phoneNum
+			}		
 	default:
 		return state
 	}

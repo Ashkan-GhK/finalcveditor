@@ -5,6 +5,7 @@ import {useDispatch} from 'react-redux';
 
 function FormBody() {
 	const dispatch = useDispatch();
+	// FIRSTNAME
 	const [input, setInput] = useState("");
         const [userVal, setUserVal] = useState("");
         const handleInput = event => {
@@ -21,6 +22,53 @@ function FormBody() {
             input: input
           })
         }
+	
+	// LASTNAME
+	const [lastName, setLastName] = useState("");
+	const [lastNameVal, setLastNameVal] = useState("");
+
+	const lastNameInput = event => {
+		setLastName(event.target.value);
+	   };
+   
+	   let logLastNameVal = () => {
+		   console.log(lastNameVal)
+	     setLastNameVal(lastName);
+	   };
+
+
+	function showLastName (lastName) {
+		dispatch({
+			type: 'SHOW_LASTNAME_INPUT',
+			lastName : lastName
+		})
+	}
+
+	//PHONE NUMBER
+
+
+	const [phoneNum, setPhoneNum] = useState("");
+	const [phoneNumVal, setPhoneNumVal] = useState("");
+
+	const phoneNumInput = event => {
+		setPhoneNum(event.target.value);
+	   };
+   
+	   let logPhoneNumVal = () => {
+		   console.log(phoneNumVal)
+	     setPhoneNumVal(phoneNum);
+	   };
+
+
+	function showPhoneNum (phoneNum) {
+		dispatch({
+			type: 'SHOW_PHONENUM_INPUT',
+			phoneNum : phoneNum
+		})
+	}
+
+
+
 
 
 	return (
@@ -28,17 +76,20 @@ function FormBody() {
 			<div className="formbody__input__container">
 				<div className="formbody__input">
 				        <label for="fname">First Name</label><br />
-					<input onChange={handleInput}  type="text" id="fname" name="fname" />
-
+					<input onChange={handleInput}  type="text" id="fname" name="fname" maxLength="16" />
 					<p onChange={logValue}>{showInput(input)}</p>
 				</div>
 				<div className="formbody__input">
 				        <label for="lname">Last Name</label> <br />
-					<input type="text" id="lname"  name="lname"/>
+					<input onChange={lastNameInput} type="text" id="lname"  name="lname" maxLength="16"/>
+					<p onChange={logLastNameVal}>{showLastName(lastName)}</p>
+
 				</div>
 				<div className="formbody__input">
 				        <label for="phone">Phone</label> <br />
-					<input type="text" id="phone" name="phone" />
+					<input onChange={phoneNumInput} type="text" id="phone" name="phone" maxLength="16"/>
+					<p onChange={logPhoneNumVal}>{showPhoneNum(phoneNum)}</p>
+
 				</div>
 				<div className="formbody__input">
 				        <label for="email">Email</label> <br />

@@ -1,19 +1,22 @@
 import '../resumeone/ResumeOne.css';
-import { useState } from 'react';
 import blackimg from '../../../image/blackimg.png';
 import {useSelector} from 'react-redux';
 
 function ResumeOne() {
-	const[name] =useState("Alex")
 
 	const showUserInput = useSelector(state => state.input);
-	
+	const showUserLastName = useSelector(state => state.lastName);
+	const showPhoneNum = useSelector(state => state.phoneNum);
+
+
 	return (
 		<div className="resumeone">
 			<header className="resumeone__header">
 				<div className="resumeone__header__left">
 					<div className="resumeone__name">
-					 <p>{showUserInput.length-1 >= 0 ? showUserInput : "Alex"} Gakan</p>
+					 <p>{showUserInput.length-1 >= 0 ? showUserInput : "Alex"}&nbsp;
+					 {showUserLastName.length-1 >= 0 ? showUserLastName : "Gakan"}
+					  </p>
 					</div>
 				</div>
 				<div className="resumeone__header__right__container">
@@ -30,7 +33,9 @@ function ResumeOne() {
 					        </div>
 					        <div className="resumeone__header__right__content">
 						        <span>Phone</span>
-						        <p>+447712126669</p>
+							
+							{showPhoneNum.length-1 >= 0 ? showPhoneNum : "+447779277799"}
+
 					        </div>
 				        </div>
 					<div className="resumeone__header__img">
@@ -100,10 +105,10 @@ function ResumeOne() {
 						</div>
 						<div className="workexperience__content__left__place">
 							<div>
-							        <span>University of Bristol</span>
+							        <span>Brunel University</span>
 							</div>
 							<div style={{fontWeight:"bolder"}}>
-							        <p>Bristol</p>
+							        <p>London</p>
 							</div>
 						</div>
 						
