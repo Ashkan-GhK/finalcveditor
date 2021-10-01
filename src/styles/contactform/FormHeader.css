@@ -2,7 +2,7 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  height: 250px;
+  height: 20%px;
 }
 
 .formheader__img__container {
@@ -15,7 +15,7 @@
 
 .formheader__img__container img {
   height: 120px;
-  margin: 25px;
+  margin-top: 5px;
   border-radius: 5px;
 }
 
@@ -61,4 +61,10 @@
   height: 30px;
   cursor: pointer;
   border: 1px solid rgba(128, 128, 128, 0.399);
+}
+
+@media screen and (max-width: 700px) {
+}
+
+@media screen and (max-width: 550px) {
 }

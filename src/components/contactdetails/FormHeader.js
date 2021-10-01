@@ -29,8 +29,6 @@ function FormHeader() {
 				</button>
 			</div>
 			</div>
-
-
 		</div>
 	)
 }
