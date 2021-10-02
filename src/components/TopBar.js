@@ -1,14 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../styles/TopBar.css'
-import CvTemplates from './CvTemplates'
 
 function TopBar() {
 
 
-
     return (
         <div className='topBar'>
-
         
             {/* Left Side */}
             <div className="topBar__left">
