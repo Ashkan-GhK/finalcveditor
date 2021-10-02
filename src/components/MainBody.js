@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/MainBody.css'
 import '../styles/Sidebar.css'
 // import PersonIcon from '@material-ui/icons/Person';
@@ -17,6 +17,7 @@ import Language from '../components/language/Language';
 import Interest from '../components/interest/Interest';
 import Skills from '../components/skills/Skills';
 import ResumeOne from './resumes/resumeone/ResumeOne';
+import TopBar from './TopBar';
 
 
 
@@ -25,6 +26,9 @@ function MainBody() {
     const sections = ["contact", "objective", "work experience", "education", "skills", "language", "interest" ];
 
     const [mySection, setMySection] = useState('')
+
+
+ 
     
    
     
@@ -51,6 +55,8 @@ return (
             {/* Left Section */}
             <div className="mainbody__left">
                 <div className="editor__preview">
+                
+                    {!mySection ? <CvTemplates /> : null}
                    {mySection === 'contact' ? <ContactForm /> : null}
                    {mySection === 'objective' ? <Objective /> : null}
                    {mySection === 'work experience' ? <WorkExperience /> : null}

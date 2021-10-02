@@ -1,10 +1,15 @@
 import React from 'react'
 import '../styles/TopBar.css'
+import CvTemplates from './CvTemplates'
 
 function TopBar() {
+
+
+
     return (
         <div className='topBar'>
 
+        
             {/* Left Side */}
             <div className="topBar__left">
                 <div className="topBar__left__button">

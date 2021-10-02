@@ -18,6 +18,8 @@ function ResumeOne() {
 	return (
 		<div className="resumeone">
 			<header className="resumeone__header">
+				{/* adding a viv to test */}
+				<div className="testdiv">
 				<div className="resumeone__header__left">
 					<div className="resumeone__name">
 					 <p>{showUserInput.length-1 >= 0 ? showUserInput : "Alex"}&nbsp;
@@ -47,6 +49,7 @@ function ResumeOne() {
 					        <img  width="80px" src={blackimg} alt="img" />					
 					</div>
 			        </div>
+				</div>
 			</header>
 			
 			<section className="objective">
@@ -60,8 +63,12 @@ function ResumeOne() {
 				</div>				
 			</section>
 
+
+			<p className="workexperience__title">Work Experience</p>
+
+
 			<section className="workexperience">
-				<p className="workexperience__title">Work Experience</p>
+
 				<div className="workexperience__content">
 					<div className="workexperience__content__left">
 						<div className="workexperience__content__left__job">
@@ -77,15 +84,15 @@ function ResumeOne() {
 						</div>
 						
 						<div className="workexperience__content__left__date">
-							<div style={{display:"flex", fontWeight:"bolder"}}>
-							        <div>Sep</div>
-								<div>2021</div>
-							</div>
-							<div style={{display:"flex", padding:"0 2px", fontWeight:"bold"}}>/</div>
-							<div style={{display:"flex", fontWeight:"bolder"}}>
-							        <div>Sep</div>
+							<div className="workex__date" style={{fontWeight:"bolder"}}>
+							        <p>Sep<span>2020</span></p>
 								
-								<div>2021</div>
+								
+							</div>
+							<div style={{ fontWeight:"bold"}}>/</div>
+							<div className="workex__date" style={{ fontWeight:"bolder"}}>
+							        <p>Sep<span>2021</span></p>
+								
 							</div>
 						</div>
 					</div>
@@ -100,9 +107,10 @@ function ResumeOne() {
 			</section>
 			
 			{/* EDUCATION */}
+			<p className="workexperience__title">Education</p>
+
 
 			<section className="workexperience">
-				<p className="workexperience__title">Education</p>
 				<div className="workexperience__content">
 					<div className="workexperience__content__left">
 						<div className="workexperience__content__left__job">
@@ -172,8 +180,8 @@ function ResumeOne() {
 						
 					</div>
 				</div>
-			</section>
-
+			</section>  
+			
 
 		</div>
 	)

@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   border: 0;
+  width: 100%;
   line-height: 1.5;
   vertical-align: baseline;
   box-sizing: border-box;
@@ -12,48 +13,50 @@
 
 .resumeone {
   display: flex;
+  flex-direction: column;
   color: #010101;
   width: 100%;
-  height: auto;
-  font-size: 16px !important;
+  height: 1200px;
+  font-size: 16px;
   font-weight: 300;
   line-height: 20px;
   overflow: visible;
-  flex-direction: column;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 /* Header */
 
 .resumeone__header {
   display: flex;
-  margin: 14px;
-  height: 100px;
+  margin: 16px;
+  height: 150px;
   width: 96%;
   align-items: center;
+}
+.testdiv {
+  display: flex;
+  width: 100%;
+  height: auto;
   justify-content: space-between;
-  border-bottom: 1px dotted #3770b1;
 }
 
 .resumeone__header__left {
   font-weight: bold;
   width: 50%;
-  font-size: 2rem;
+  font-size: 30px !important;
   color: #3770b1;
 }
 
 .resumeone__header__right {
   display: flex;
+  font-size: 14px !important;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 75%;
 }
 
 .resumeone__header__right__container {
   display: flex;
-  position: relative;
-  height: 100px;
   width: 60%;
   margin-top: 10px;
   word-wrap: break-word !important;
@@ -72,28 +75,29 @@
   margin-right: 10px;
   font-weight: bold;
   word-break: normal;
-  height: 100%;
+  /* height: 100%; */
 }
 
 .resumeone__header__img {
   display: flex;
-  height: 90%;
   margin-left: 10px;
+  width: 120px !important;
+  height: 120px;
 }
 
 .resumeone__header__img img {
   margin-bottom: 10px;
+  width: 100px;
 }
 
 /* Section one */
 
 .objective {
-  display: flex;
-  flex-direction: column;
-  height: auto;
   width: 96%;
   border-bottom: 1px dotted #3770b1;
   margin: 16px;
+  margin-top: 10px;
+  border-top: 1px dotted #3770b1;
 }
 
 .objective__container {
@@ -105,6 +109,7 @@
 
 .objective__title {
   font-weight: bolder;
+  margin-top: 20px;
 }
 
 .objective__content {
@@ -115,24 +120,28 @@
 /* Section two */
 
 .workexperience {
-  height: auto;
   width: 96%;
-  margin: 16px;
   border-bottom: 1px dotted #3770b1;
+  margin-left: 25px !important;
+  padding: 20px;
 }
 
 .workexperience__title {
   font-weight: bolder;
+  margin: 10px 20px;
+  margin-bottom: -20px;
 }
 .workexperience__content {
   display: flex;
-  width: 100%;
+  justify-content: space-between;
 }
 
 .workexperience__content__left {
   display: flex;
+  width: 200px;
+  margin-left: 10px;
   flex-direction: column;
-  width: 30%;
+  word-break: break-all;
 }
 
 .workexperience__content__right {
@@ -147,6 +156,7 @@
 
 .workexperience__content__left__place {
   display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
@@ -155,27 +165,24 @@
 }
 
 .workexperience__content__left__date {
-  display: flex;
+  /* display: flex; */
 }
 
 /* section five */
 
 .skills__Language {
   display: flex;
-  height: auto;
+  justify-content: center;
   width: 96%;
-  margin: 16px;
-  border-bottom: 1px dotted #3770b1;
+  margin-left: 30px !important;
 }
 
 .skills__container {
   width: 100%;
-  border-top: 1px dotted #3770b1;
   margin-right: 50px;
 }
 .language__container {
   width: 100%;
-  border-top: 1px dotted #3770b1;
 }
 
 .skills__container__list__item {
@@ -186,8 +193,323 @@
 }
 
 .interest {
+  border-top: 1px dotted #3770b1;
+
   display: flex;
-  height: auto;
   width: 96%;
-  margin: 16px;
+  margin: 30px !important;
+}
+
+@media screen and (max-width: 600px) {
+  .resumeone * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .resumeone {
+    display: flex;
+  }
+
+  /* Header */
+
+  .resumeone__header {
+    display: flex;
+    margin: 5px;
+    height: 82px;
+    justify-content: center;
+    align-items: center;
+    width: 98%;
+    font-size: calc(1rem + ((1vw - 0.58rem) * 1.3889));
+  }
+
+  .resumeone__header__left {
+    display: flex;
+    margin-right: 5px;
+    margin-left: 15px;
+    width: 35%;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(1.8rem + ((1vw - 0.58rem) * 1.3889));
+  }
+
+  .resumeone__header__right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(1.1rem + ((1vw - 0.58rem) * 1.3889));
+  }
+  .break {
+    word-break: break-word;
+  }
+
+  .resumeone__header__right__container {
+    width: 60%;
+  }
+
+  .resumeone__header__right__content {
+  }
+
+  .resumeone__header__right__content span {
+    margin-top: 5px;
+    width: auto;
+  }
+
+  .resumeone__header__img {
+    margin: 5px;
+    width: 50%;
+    max-width: 400px;
+  }
+
+  .resumeone__header__img img {
+    margin: 10px;
+    width: 100%;
+  }
+
+  /* Section one */
+
+  .objective {
+    width: 96%;
+    margin: 16px;
+    margin-top: 20px;
+    padding: 20px;
+    border-bottom: 1px dotted #3770b1;
+    border-top: 1px dotted #3770b1;
+  }
+
+  .objective__container {
+  }
+
+  .objective__title {
+  }
+
+  .objective__content {
+  }
+
+  /* Section two */
+
+  .workexperience {
+    width: 96%;
+    margin: 16px;
+    padding: 10px;
+    border-bottom: 1px dotted #3770b1;
+  }
+
+  .workexperience__title {
+    margin: 16px 35px;
+    margin-bottom: -20px;
+  }
+  .workexperience__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .workexperience__content__left {
+    width: 100px !important;
+    margin-right: 15px;
+    margin-left: 30px;
+    word-break: break-all;
+    display: flex;
+  }
+
+  .workexperience__content__right {
+  }
+
+  .workexperience__content__left__job {
+  }
+
+  .workexperience__content__left__place {
+  }
+
+  .workexperience__content__left__place > div > span {
+  }
+
+  .workexperience__content__left__date {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* section five */
+
+  .skills__Language {
+  }
+
+  .skills__container {
+  }
+  .language__container {
+  }
+
+  .skills__container__list__item {
+  }
+  .skills__container__list__item li {
+  }
+
+  .interest {
+    border-top: 1px dotted #3770b1;
+
+    display: flex;
+    width: 96%;
+    margin-left: 30px !important;
+  }
+  .interest__container {
+    margin-top: 30px !important;
+  }
+}
+
+@media screen and (min-width: 624px) {
+  .resumeone * {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .resumeone {
+    display: flex;
+    margin: 16px;
+  }
+
+  /* Header */
+
+  .resumeone__header {
+    display: flex;
+    margin: 5px;
+    margin-top: 25px;
+    height: 82px;
+    justify-content: center;
+    align-items: center;
+    width: 98%;
+  }
+
+  .resumeone__header__left {
+    display: flex;
+    margin-right: 5px;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(2.8rem + ((1vw - 0.58rem) * 1.3889));
+  }
+
+  .resumeone__header__right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(1.2rem + ((1vw - 0.58rem) * 1.3889));
+  }
+  .break {
+    word-break: break-word;
+  }
+
+  .resumeone__header__right__container {
+    width: 70%;
+  }
+
+  .resumeone__header__right__content {
+  }
+
+  .resumeone__header__right__content span {
+    margin-top: 5px;
+    width: auto;
+  }
+
+  .resumeone__header__img {
+    margin: 5px;
+    width: 50%;
+  }
+
+  .resumeone__header__img img {
+    margin: 5px;
+    width: 100%;
+  }
+
+  /* Section one */
+
+  .objective {
+    width: 98%;
+    margin: 16px;
+    margin-top: 20px;
+    padding: 20px;
+    border-bottom: 1px dotted #3770b1;
+    border-top: 1px dotted #3770b1;
+  }
+
+  .objective__container {
+  }
+
+  .objective__title {
+  }
+
+  .objective__content {
+  }
+
+  /* Section two */
+
+  .workexperience {
+    width: 96%;
+    margin: 16px;
+    padding: 10px;
+    border-bottom: 1px dotted #3770b1;
+  }
+
+  .workexperience__title {
+    margin: 16px 35px;
+    margin-bottom: -20px;
+  }
+  .workexperience__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .workexperience__content__left {
+    width: 30% !important;
+    /* word-break: break-all; */
+    display: flex;
+  }
+
+  .workexperience__content__right {
+  }
+
+  .workexperience__content__left__job {
+  }
+
+  .workexperience__content__left__place {
+  }
+
+  .workexperience__content__left__place > div > span {
+  }
+
+  .workexperience__content__left__date {
+    display: flex;
+    width: 80%;
+    justify-content: start;
+    padding-right: 10px;
+  }
+  .workex__date {
+    width: 430px;
+  }
+
+  /* section five */
+
+  .skills__Language {
+  }
+
+  .skills__container {
+  }
+  .language__container {
+  }
+
+  .skills__container__list__item {
+  }
+  .skills__container__list__item li {
+  }
+
+  .interest {
+    border-top: 1px dotted #3770b1;
+
+    display: flex;
+    width: 96%;
+    margin-left: 30px !important;
+  }
+  .interest__container {
+    margin-top: 30px !important;
+  }
 }
