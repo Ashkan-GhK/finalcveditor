@@ -5,5 +5,11 @@
 }
 
 .app {
+  display: flex;
   background-color: #f9f9f9;
+}
+
+.app__components {
+  display: flex;
+  flex-direction: column;
 }
