@@ -64,6 +64,7 @@ function FormBody() {
 			type: 'SHOW_PHONENUM_INPUT',
 			phoneNum : phoneNum
 		})
+		console.log(dispatch.phoneNum)
 	}
 
 

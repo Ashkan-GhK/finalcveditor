@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/MainBody.css'
 import '../styles/Sidebar.css'
+import {useSelector} from 'react-redux';
 
 // import PersonIcon from '@material-ui/icons/Person';
 // import GolfCourseIcon from '@material-ui/icons/GolfCourse';
@@ -21,13 +22,24 @@ import ResumeOne from './resumes/resumeone/ResumeOne';
 
 
 
-function MainBody({data}) {
+function MainBody() {
+
+    const showCvTempComponent = useSelector(state => state.cvTempSelection);
 
     const sections = ["contact", "objective", "work experience", "education", "skills", "language", "interest" ];
 
-    const [mySection, setMySection] = useState('')
+    const [mySection, setMySection] = useState('');
+    const [showCv, setShowCv] =useState("")
 
 
+   useEffect (() => {
+       
+           setShowCv('cvtest')
+           setMySection(showCv)
+        //    console.log(mySection)
+        //    console.log(showCv)
+
+   },[showCvTempComponent])
 
 
    
@@ -53,13 +65,13 @@ return (
             {/* Left Section */}
             <div className="mainbody__left">
                 <div className="editor__preview">
-                     {/* < CvTemplates  />  */}
-                    {!mySection? <CvTemplates/> : null ||
-                   mySection === 'contact' ? <ContactForm /> : null ||
-                   mySection === 'objective' ? <Objective /> : null ||
+                    {!mySection && <CvTemplates/>}
+
+                   {mySection === 'cvtest' ? <CvTemplates/> : null}
+                  {mySection === 'contact' ? <ContactForm />  : null ||
+                  mySection === 'objective' ? <Objective /> : null ||
                    mySection === 'work experience' ? <WorkExperience /> : null||
                    mySection === 'education' ? <Education /> : null ||
-                   
                    mySection === 'skills' ? <Skills /> : null ||
                    mySection === 'language' ? <Language /> : null ||
                    mySection === 'interest' ? <Interest /> : null}

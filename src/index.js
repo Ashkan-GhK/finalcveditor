@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 import { composeWithDevTools } from "redux-devtools-extension";
 
 
-const store = createStore(resumeReducer, composeWithDevTools()); 
+const store = createStore(resumeReducer, composeWithDevTools());
 
 ReactDOM.render(
   <Provider store={store}>

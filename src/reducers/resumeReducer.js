@@ -4,8 +4,10 @@ const initState = {
 	phoneNum: '+447779277799',
 	email: 'alex@gmail.com',
 	address: '42 B Fulham Palace Rd w69ph',
-	objective: 'Would like to gain the necessary experience to hopefully become Operations Manager of all services running across the platform'
-}
+	objective: 'Would like to gain the necessary experience to hopefully become Operations Manager of all services running across the platform',
+	cvTempSelection: null
+ }
+	
 
 const Reducer = (state = initState,action) => {
 	switch (action.type) {
@@ -38,7 +40,12 @@ const Reducer = (state = initState,action) => {
 			return {
 				...state,
 				objective: action.objective
-			}	
+			}
+			case "SHOW_CVTEMPLATES":
+				return {
+					...state,
+					cvTempSelection: action.cvTempSelection
+				}	
 	default:
 		return state
 	}
