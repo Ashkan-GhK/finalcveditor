@@ -22,12 +22,25 @@
   font-weight: 600;
 }
 
-.topbar__dropdown__menu__container {
+.topbar__dropdown__menu__container__open {
   width: 100%;
   background-color: #f9f9f9;
   height: 100vh;
 }
-
+.topbar__dropdown__menu__container__close {
+  display: none;
+}
+.topbar__dropdown__right__expand > button {
+  border: none;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+.open__menu__arrow {
+  transform: rotate(180deg);
+}
+.close__menue__arrow {
+  transition: 0.5s;
+}
 .topbar__dropdown__menu {
   display: flex;
   width: 100%;
