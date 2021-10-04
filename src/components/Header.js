@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/Header.css';
 
 
 function Header() {
+
+    const [isOpen, setIsOpen] = useState(false);
+
+   
+
+
     return (
         <div className='header'>
             <h4>GhK Editor</h4>
@@ -12,12 +18,12 @@ function Header() {
                 </div>
                 <div className="topbar__dropdown__right">
                     <div className="topbar__dropdown__right__expand">
-                    <img style={{width:"30px", float:"right"}} src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_expand_more_48px-512.png" alt="expand" />
+                    <button onClick={() => setIsOpen(!isOpen)}> <img className={isOpen? "close__menu__arrow":"open__menu__arrow"} style={{width:"30px", float:"right"}} src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_expand_more_48px-512.png" alt="expand" /></button>
                     </div>
                 </div>
-
+                
             </div>
-            <div className="topbar__dropdown__menu__container">
+            <div className={isOpen? "topbar__dropdown__menu__container__open" : "topbar__dropdown__menu__container__close"}>
                 <div className="topbar__dropdown__menu">
                     <div className="topbar__dropdown__menu__item">Contact details</div>
                     <div className="topbar__dropdown__menu__item">Objective</div>
