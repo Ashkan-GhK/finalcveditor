@@ -2,6 +2,7 @@ import Header from './components/Header';
 import MainBody from './components/MainBody';
 import TopBar from './components/TopBar';
 import './App.css';
+import FooterMobile from './FooterMobile';
 
 
 function App() {
@@ -11,6 +12,10 @@ function App() {
       <Header />
       <TopBar />
       <MainBody  />
+    </div>
+    <div className="footermobile">
+    <FooterMobile/>
+
     </div>
     </div>
   );

@@ -26,6 +26,7 @@
   width: 100%;
   background-color: #f9f9f9;
   height: 100vh;
+  display: none;
 }
 .topbar__dropdown__menu__container__close {
   display: none;
@@ -42,7 +43,7 @@
   transition: 0.5s;
 }
 .topbar__dropdown__menu {
-  display: flex;
+  display: none;
   width: 100%;
   flex-direction: column;
 }
@@ -50,12 +51,20 @@
 .topbar__dropdown__menu__item {
   display: flex;
   align-items: center;
-  padding-left: 20px;
+  flex-direction: column;
   font-weight: 400;
-  height: 50px;
+  height: 100vh;
   width: 100%;
-  border-bottom: 1px solid #bcbcbc;
   color: #6d6d6d;
+}
+.topbar__dropdown__menu__item > button {
+  width: 100%;
+  border: none;
+  height: 50px;
+  border-bottom: 1px solid #bcbcbc;
+  letter-spacing: 1px;
+  height: 60px;
+  font-size: 1rem;
 }
 
 @media screen and (max-width: 1024px) {
@@ -66,9 +75,11 @@
     width: 100%;
     margin-top: 22px;
     background-color: #f9f9f9;
-    height: 50px;
   }
-  .topbar__dropdown__menu__container {
+  .topbar__dropdown__menu {
+    display: flex;
+  }
+  .topbar__dropdown__menu__container__open {
     display: flex;
   }
 }

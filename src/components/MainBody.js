@@ -2,14 +2,6 @@ import React, { useEffect, useState } from 'react'
 import '../styles/MainBody.css'
 import '../styles/Sidebar.css'
 import {useSelector} from 'react-redux';
-
-// import PersonIcon from '@material-ui/icons/Person';
-// import GolfCourseIcon from '@material-ui/icons/GolfCourse';
-// import WorkIcon from '@material-ui/icons/Work';
-// import SchoolIcon from '@material-ui/icons/School';
-// import FormatListBulletedIcon from '@material-ui/icons/FormatListBulleted';
-// import LanguageIcon from '@material-ui/icons/Language';
-// import GamesIcon from '@material-ui/icons/Games';
 import ContactForm from '../components/contactdetails/ContactForm'
 import Objective from '../components/objective/Objective';
 import CvTemplates from './CvTemplates';
@@ -85,6 +77,7 @@ return (
                     <ResumeOne />
                 </div>
             </div>
+            
 
         </div>
     )
