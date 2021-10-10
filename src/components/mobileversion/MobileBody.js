@@ -1,8 +1,13 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import '../mobileversion/MobileBody.css';
+import ContentContainer from './mobilenavbar/ContentContainer';
 import MobileNavbar from './mobilenavbar/MobileNavbar';
 
 function MobileBody() {
+
+
+
     return (
         <div className="mobilebody">
             {/* NAVBAR MENU*/}
@@ -10,6 +15,8 @@ function MobileBody() {
 
             
             {/* CONTENT CONTAINER */}
+            
+            <ContentContainer />
 
                      {/* CV TEMPLATE */}
 
