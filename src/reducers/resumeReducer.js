@@ -6,9 +6,9 @@ const initState = {
 	address: '42 Fulham Palace Rd w6 9ph',
 	objective: 'Would like to gain the necessary experience to hopefully become Operations Manager of all services running across the platform',
 	cvTempSelection: null,
-	isOpen: false
-	
- }
+	isOpen: true,
+	editorMobile: null
+}
 	
 	
 const Reducer = (state = initState,action) => {
@@ -43,16 +43,21 @@ const Reducer = (state = initState,action) => {
 				...state,
 				objective: action.objective
 			}
-			case "SHOW_CVTEMPLATES":
-				return {
-					...state,
-					cvTempSelection: action.cvTempSelection
-				}
-			case "SHOW_MENU_ITEMS":
-				return {
-					...state,
-					isOpen: action.isOpen
-				}	
+		case "SHOW_CVTEMPLATES":
+			return {
+				...state,
+				cvTempSelection: action.cvTempSelection
+			}
+		case "SHOW_MENU_ITEMS":
+			return {
+				...state,
+				isOpen: action.isOpen
+			}
+		case "SHOW_EDITOR_ITEM":
+			return {
+				...state,
+				editorMobile: action.editorMobile
+			}	
 	default:
 		return state
 	}
