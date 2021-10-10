@@ -1,35 +1,36 @@
-import React,{ useState,useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 import './MenuItems.css';
 
 function MenuItems() {
 
 	const showMenuItems = useSelector(state => state.isOpen);
+	
+
+	const dispatch = useDispatch();
 
 	const sections = ["contact", "objective", "work experience", "education", "skills", "language", "interest" ];
 
-	const [mySection, setMySection] = useState(null);
+	// const [editorMobile, setEditorMobile] = useState(null);
+
+
 
 	function handleClick(e) {
-		const btnValue = (e.target.value)
-		// console.log(btnValue);
-		setMySection(btnValue);
-		console.log(mySection);
-		// setEditorMobile("editorMobile")
-	
-		// dispatch({
-		//     type: 'SHOW_EDITOR_MOBILE',
-		//     editorMobile: editorMobile
-		//   })
-	      
-	
-	    }
-	    useEffect(() => {
 
-		console.log(showMenuItems)
-	    },[showMenuItems])
+		const editorMobile = e.target.value;
+		console.log(editorMobile)
 
+	
+		dispatch({
+		    type: 'SHOW_EDITOR_ITEM',
+		    editorMobile: editorMobile
+		  })
+	}
+	    
+
+	// useEffect(() => {
+	// }, [])
 
 
 	return (
