@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import React, {  useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import '../mobilenavbar/MenuContainer.css';
 
 function MenuContainer() {
 
     const dispatch = useDispatch();    
+    const showEditorItems = useSelector(state => state.editorMobile);
+
+
+    const[navTitle, setNavTitle] = useState("")
     const [isOpen, setIsOpen] = useState(false);
 
     function menuItems(e) {
 	setIsOpen(!isOpen);
-        // const btnValue = (e.target.value);
         console.log(isOpen);
 
         dispatch({
@@ -19,13 +21,18 @@ function MenuContainer() {
         })     
     }
 
+    useEffect(()=>{
+	    setNavTitle(showEditorItems)
+	    console.log(navTitle)
+	    console.log(showEditorItems)
+    }, [showEditorItems])
 
 
 	return (
              <div className="menuContainer">
                 <div className="menuContainer__left">
-                {/* <p style={{display:"flex", justifyContent:"center", alignItems:"center",marginLeft:"20px"}}>{!mySection ? "CV Templates" : mySection}</p> */}
-		<p style={{marginLeft:"10px"}}>CV selector</p>
+                {/* <p >{!mySection ? "CV Templates" : mySection}</p> */}
+		<p style={{marginLeft:"10px"}}>{navTitle ? navTitle : "CV Templates"}</p>
                 </div>
                 <div className="menuContainer__right">
                     <div className="menuContainer__right__expand">
