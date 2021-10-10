@@ -7,15 +7,17 @@ function MenuContainer() {
 
     const dispatch = useDispatch();    
     const [isOpen, setIsOpen] = useState(false);
-//     function showEditorMobile(e) {
-//         const btnValue = (e.target.value)
-//         // console.log(btnValue);
 
-//         dispatch({
-//             type: 'SHOW_EDITOR_MOBILE',
-//             editorMobile: editorMobile
-//         })     
-//     }
+    function menuItems(e) {
+	setIsOpen(!isOpen);
+        // const btnValue = (e.target.value);
+        console.log(isOpen);
+
+        dispatch({
+            type: 'SHOW_MENU_ITEMS',
+            isOpen: isOpen
+        })     
+    }
 
 
 
@@ -27,13 +29,13 @@ function MenuContainer() {
                 </div>
                 <div className="menuContainer__right">
                     <div className="menuContainer__right__expand">
-                    <button onClick={() => setIsOpen(!isOpen)}> <img className={isOpen? "close__menu__arrow":"open__menu__arrow"} style={{width:"30px", float:"right"}} src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_expand_more_48px-512.png" alt="expand" /></button>
+                    <button value="showitems" onClick={menuItems}> <img className={isOpen? "close__menu__arrow":"open__menu__arrow"} style={{width:"30px", float:"right"}} src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_expand_more_48px-512.png" alt="expand" /></button>
                     
                     </div>
                 </div>
                 
             </div>
-    )
+        )
 }
 
 

@@ -1,7 +1,11 @@
-import React,{ useState } from 'react';
+import React,{ useState,useEffect } from 'react';
+import { useSelector } from 'react-redux';
+
 import './MenuItems.css';
 
 function MenuItems() {
+
+	const showMenuItems = useSelector(state => state.isOpen);
 
 	const sections = ["contact", "objective", "work experience", "education", "skills", "language", "interest" ];
 
@@ -21,12 +25,17 @@ function MenuItems() {
 	      
 	
 	    }
+	    useEffect(() => {
+
+		console.log(showMenuItems)
+	    },[showMenuItems])
 
 
 
 	return (
-		<div className="menuitems">   
-                        <div className="menuitems__container">
+		<div className="menuitems">  
+
+                       {!showMenuItems && <div className="menuitems__container">
                                 <div className="menuitems__section__buttons">
                                         {sections.map(section => (
                                                 <button
@@ -39,7 +48,7 @@ function MenuItems() {
                                                 </button>   
                                         ))}
                                 </div>
-		        </div>
+		        </div>}
             
                 </div>
 	)

@@ -6,7 +6,7 @@ const initState = {
 	address: '42 Fulham Palace Rd w6 9ph',
 	objective: 'Would like to gain the necessary experience to hopefully become Operations Manager of all services running across the platform',
 	cvTempSelection: null,
-	editorMonbile: null
+	isOpen: false
 	
  }
 	
@@ -48,10 +48,10 @@ const Reducer = (state = initState,action) => {
 					...state,
 					cvTempSelection: action.cvTempSelection
 				}
-			case "SHOW_EDITOR_MOBILE":
+			case "SHOW_MENU_ITEMS":
 				return {
 					...state,
-					editorMonbile: action.editorMonbile
+					isOpen: action.isOpen
 				}	
 	default:
 		return state

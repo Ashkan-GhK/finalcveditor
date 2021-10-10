@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import ContactForm from '../components/contactdetails/ContactForm'
-import Objective from '../components/objective/Objective';
-import CvTemplates from './CvTemplates';
-import WorkExperience from '../components/workexperience/WorkExperience';
-import Education from '../components/education/Eduacation';
-import Language from '../components/language/Language';
-import Interest from '../components/interest/Interest';
-import Skills from '../components/skills/Skills';
-import ResumeOne from './resumes/resumeone/ResumeOne';
+// import ContactForm from '../components/contactdetails/ContactForm'
+// import Objective from '../components/objective/Objective';
+// import CvTemplates from './CvTemplates';
+// import WorkExperience from '../components/workexperience/WorkExperience';
+// import Education from '../components/education/Eduacation';
+// import Language from '../components/language/Language';
+// import Interest from '../components/interest/Interest';
+// import Skills from '../components/skills/Skills';
+// import ResumeOne from './resumes/resumeone/ResumeOne';
 import '../styles/Header.css';
-import { getByDisplayValue } from '@testing-library/dom';
 
 
 function Header() {
