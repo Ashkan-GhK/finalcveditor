@@ -18,7 +18,7 @@ import ResumeOne from './resumes/resumeone/ResumeOne';
 function MainBody() {
 
     const showCvTempComponent = useSelector(state => state.cvTempSelection);
-    const showEditorMobile = useSelector(state => state.cvTempSelection);
+    const showEditorMobile = useSelector(state => state.editorMobile);
 
     const sections = ["contact", "objective", "work experience", "education", "skills", "language", "interest" ];
 
@@ -26,17 +26,17 @@ function MainBody() {
     const [showCv, setShowCv] =useState("")
     const [showEditor, setShowEditor] = useState("");
 
-   useEffect (() => {
+    useEffect (() => {
        
-           setShowCv('cvtest')
-           setMySection(showCv)
-        //    console.log(mySection)
-        //    console.log(showCv)
-        setShowEditor('showeditor')
-       
-        setMySection(showEditor)
+        setShowCv('cvtest')
+        setMySection(showCv)
+     //    console.log(mySection)
+     //    console.log(showCv)
+     setShowEditor('showeditor')
+    
+     setMySection(showEditor)
 
-   },[showCvTempComponent, showEditorMobile])
+},[showCvTempComponent, showEditorMobile])
 
 
    
@@ -61,7 +61,7 @@ return (
                 </div>
             {/* Left Section */}
             <div className="mainbody__left">
-                <div className="editor__preview">
+            <div className="editor__preview">
                     {!mySection && <CvTemplates/>}
 
                   {mySection === 'cvtest' ? <CvTemplates/> : null ||
