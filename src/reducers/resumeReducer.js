@@ -3,12 +3,14 @@ const initState = {
 	lastName: 'Gakan',
 	phoneNum: '+447779277799',
 	email: 'alex@gmail.com',
-	address: '42 B Fulham Palace Rd w69ph',
+	address: '42 Fulham Palace Rd w6 9ph',
 	objective: 'Would like to gain the necessary experience to hopefully become Operations Manager of all services running across the platform',
-	cvTempSelection: null
+	cvTempSelection: null,
+	editorMonbile: null
+	
  }
 	
-
+	
 const Reducer = (state = initState,action) => {
 	switch (action.type) {
 		case "SHOW_INPUT":
@@ -45,6 +47,11 @@ const Reducer = (state = initState,action) => {
 				return {
 					...state,
 					cvTempSelection: action.cvTempSelection
+				}
+			case "SHOW_EDITOR_MOBILE":
+				return {
+					...state,
+					editorMonbile: action.editorMonbile
 				}	
 	default:
 		return state

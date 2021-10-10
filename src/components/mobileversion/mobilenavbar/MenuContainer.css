@@ -1,0 +1,22 @@
+.menuContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #bcbcbc;
+  height: 50px;
+  font-weight: 600;
+}
+
+.menuContainer__right__expand > button {
+  border: none;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+.open__menu__arrow {
+  transform: rotate(180deg);
+}
+.close__menue__arrow {
+  transition: 0.5s;
+}

@@ -44,6 +44,7 @@ body {
   height: 80%;
   width: 40%;
   box-shadow: 1px solid gray;
+  overflow-y: scroll !important;
 }
 
 .editor__preview {
@@ -52,6 +53,7 @@ body {
   height: 90%;
   width: 90%;
   box-shadow: 2px solid gray;
+  overflow-y: scroll !important;
 }
 
 .mainbody__right {
@@ -74,10 +76,13 @@ body {
 }
 
 @media screen and (max-width: 1024px) {
-  .mainbody__right {
+  /* .mainbody__right {
     display: none;
   }
   .mainbody__left {
     width: 100%;
+  } */
+  .mainBody {
+    display: none;
   }
 }

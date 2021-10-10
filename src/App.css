@@ -14,3 +14,18 @@
   display: flex;
   flex-direction: column;
 }
+
+.footer__mobile {
+  position: sticky;
+  bottom: 0;
+}
+
+@media screen AND (max-width: 600px) {
+  .app {
+    height: 100vh;
+  }
+  .footermobile {
+    position: sticky;
+    bottom: 0;
+  }
+}

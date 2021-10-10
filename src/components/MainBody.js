@@ -14,15 +14,17 @@ import ResumeOne from './resumes/resumeone/ResumeOne';
 
 
 
+
 function MainBody() {
 
     const showCvTempComponent = useSelector(state => state.cvTempSelection);
+    const showEditorMobile = useSelector(state => state.cvTempSelection);
 
     const sections = ["contact", "objective", "work experience", "education", "skills", "language", "interest" ];
 
     const [mySection, setMySection] = useState('');
     const [showCv, setShowCv] =useState("")
-
+    const [showEditor, setShowEditor] = useState("");
 
    useEffect (() => {
        
@@ -30,12 +32,15 @@ function MainBody() {
            setMySection(showCv)
         //    console.log(mySection)
         //    console.log(showCv)
+        setShowEditor('showeditor')
+       
+        setMySection(showEditor)
 
-   },[showCvTempComponent])
+   },[showCvTempComponent, showEditorMobile])
 
 
    
-    
+   
    
 return (
         <div className='mainBody'>
@@ -59,14 +64,14 @@ return (
                 <div className="editor__preview">
                     {!mySection && <CvTemplates/>}
 
-                   {mySection === 'cvtest' ? <CvTemplates/> : null}
-                  {mySection === 'contact' ? <ContactForm />  : null ||
+                  {mySection === 'cvtest' ? <CvTemplates/> : null ||
+                  mySection === 'contact' ? <ContactForm />  : null ||
                   mySection === 'objective' ? <Objective /> : null ||
-                   mySection === 'work experience' ? <WorkExperience /> : null||
-                   mySection === 'education' ? <Education /> : null ||
-                   mySection === 'skills' ? <Skills /> : null ||
-                   mySection === 'language' ? <Language /> : null ||
-                   mySection === 'interest' ? <Interest /> : null}
+                  mySection === 'work experience' ? <WorkExperience /> : null||
+                  mySection === 'education' ? <Education /> : null ||
+                  mySection === 'skills' ? <Skills /> : null ||
+                  mySection === 'language' ? <Language /> : null ||
+                  mySection === 'interest' ? <Interest /> : null}
                 </div>
             </div>
             
