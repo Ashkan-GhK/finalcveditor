@@ -1,22 +1,22 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import '../mobileversion/MobileBody.css';
 import ContentContainer from './mobilenavbar/ContentContainer';
+import MenuItems from './mobilenavbar/MenuItems';
 import MobileNavbar from './mobilenavbar/MobileNavbar';
 
 function MobileBody() {
 
+   
 
 
     return (
         <div className="mobilebody">
             {/* NAVBAR MENU*/}
             <MobileNavbar />
-
             
             {/* CONTENT CONTAINER */}
             
-            <ContentContainer />
+            {<ContentContainer /> }
 
                      {/* CV TEMPLATE */}
 

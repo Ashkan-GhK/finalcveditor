@@ -4,12 +4,14 @@ import MenuItems from './MenuItems';
 import './MobileNavbar.css';
 function MobileNavbar() {
 	return (
+		
 		<div className="mobileNavbar">
 			{/* MENU CONTAINER */}
 			<MenuContainer />
 
 			{/* MENU ITEMS */}
-			<MenuItems />
+			
+			{/* <MenuItems /> */}
 		</div>
 	)
 }

@@ -12,6 +12,8 @@ import WorkExperience from '../../workexperience/WorkExperience';
 function ContentContainer() {
 
 	const showEditorItems = useSelector(state => state.editorMobile);
+	const showMenuItems = useSelector(state => state.isOpen);
+
 
 	const [mySection, setMySection] =useState("");
 

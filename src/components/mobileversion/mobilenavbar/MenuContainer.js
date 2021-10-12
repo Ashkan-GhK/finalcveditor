@@ -8,12 +8,14 @@ function MenuContainer() {
     const showEditorItems = useSelector(state => state.editorMobile);
 
 
-    const[navTitle, setNavTitle] = useState("")
     const [isOpen, setIsOpen] = useState(false);
+    const[navTitle, setNavTitle] = useState('CV Templates')
+
 
     function menuItems(e) {
-	setIsOpen(!isOpen);
-        console.log(isOpen);
+	   setIsOpen(!isOpen); 
+	
+        
 
         dispatch({
             type: 'SHOW_MENU_ITEMS',
@@ -25,6 +27,7 @@ function MenuContainer() {
 	    setNavTitle(showEditorItems)
 	    console.log(navTitle)
 	    console.log(showEditorItems)
+	
     }, [showEditorItems])
 
 
