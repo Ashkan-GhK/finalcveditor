@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react';
 import { useSelector } from 'react-redux';
 import ContactForm from '../../contactdetails/ContactForm';
 import Eduacation from '../../education/Eduacation';
@@ -14,14 +14,8 @@ function ContentContainer() {
 	const showEditorItems = useSelector(state => state.editorMobile);
 
 
-	const [mySection, setMySection] =useState("");
 
 
-	useEffect (() => {
-	   setMySection(showEditorItems)
-	 
-         console.log(mySection)
-	},[showEditorItems, mySection])
 	
 
 	return (
@@ -29,13 +23,13 @@ function ContentContainer() {
 		<div className="contentContainer__content">
 		
 		  
-                  {mySection === 'contact' ? <ContactForm />  : null ||
-                  mySection === 'objective' ? <Objective /> : null ||
-                  mySection === 'work experience' ? <WorkExperience /> : null||
-                  mySection === 'education' ? <Eduacation /> : null ||
-                  mySection === 'skills' ? <Skills /> : null ||
-                  mySection === 'language' ? <Language /> : null ||
-                  mySection === 'interest' ? <Interest /> : null}
+                  {showEditorItems === 'contact' ? <ContactForm />  : null ||
+                  showEditorItems === 'objective' ? <Objective /> : null ||
+                  showEditorItems === 'work experience' ? <WorkExperience /> : null||
+                  showEditorItems === 'education' ? <Eduacation /> : null ||
+                  showEditorItems === 'skills' ? <Skills /> : null ||
+                  showEditorItems === 'language' ? <Language /> : null ||
+                  showEditorItems === 'interest' ? <Interest /> : null}
                 </div>
 		</div>
 	)
