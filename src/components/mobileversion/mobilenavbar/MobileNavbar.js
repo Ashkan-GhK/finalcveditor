@@ -10,7 +10,7 @@ function MobileNavbar() {
 			<MenuContainer />
 
 			{/* MENU ITEMS */}
-			
+			<MenuItems />
 			{/* <MenuItems /> */}
 		</div>
 	)

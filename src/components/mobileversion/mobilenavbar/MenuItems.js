@@ -1,10 +1,12 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './MenuItems.css';
 
 function MenuItems() {
 
 	const showMenuItems = useSelector(state => state.isOpen);
+
+
 	
 
 	const dispatch = useDispatch();
@@ -12,21 +14,29 @@ function MenuItems() {
 	const sections = ["contact", "objective", "work experience", "education", "skills", "language", "interest" ];
 
 
+	const [closeMenuItems, setCloseMenuItems] = useState(false)
+
 
 	
 
 	function handleClick(e) {
-
+		
 		const editorMobile = e.target.value;
 		console.log(editorMobile)
+		setCloseMenuItems(!closeMenuItems)
 		
 		
 		dispatch({
 		    type: 'SHOW_EDITOR_ITEM',
 		    editorMobile: editorMobile
+		  });
+		dispatch({
+			type: 'CLOSE_MENU-ITEMS',
+			closeMenuItems: closeMenuItems
 		  })
 	}
 	    
+	
 
 	
 
@@ -34,7 +44,7 @@ function MenuItems() {
 	return (
 		<div className='menuitems'>  
 
-                        {!showMenuItems ? <div className="menuitems__container">
+                        {showMenuItems ? <div className="menuitems__container">
                                 < div  className="menuitems__section__buttons">
                                         {sections.map(section => (
                                                 <button

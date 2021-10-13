@@ -6,8 +6,9 @@ const initState = {
 	address: '42 Fulham Palace Rd w6 9ph',
 	objective: 'Would like to gain the necessary experience to hopefully become Operations Manager of all services running across the platform',
 	cvTempSelection: null,
-	isOpen: true,
-	editorMobile: null
+	isOpen: false,
+	editorMobile: null,
+	closeMenuItems: false
 }
 	
 	
@@ -57,7 +58,12 @@ const Reducer = (state = initState,action) => {
 			return {
 				...state,
 				editorMobile: action.editorMobile
-			}	
+			}
+		case "CLOSE_MENU-ITEMS"	:
+			return {
+				...state,
+				closeMenuItems : action.closeMenuItems
+			}
 	default:
 		return state
 	}

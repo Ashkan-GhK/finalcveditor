@@ -12,24 +12,23 @@ import WorkExperience from '../../workexperience/WorkExperience';
 function ContentContainer() {
 
 	const showEditorItems = useSelector(state => state.editorMobile);
-	const showMenuItems = useSelector(state => state.isOpen);
 
 
 	const [mySection, setMySection] =useState("");
 
 
 	useEffect (() => {
-
-         setMySection(showEditorItems)
+	   setMySection(showEditorItems)
+	 
          console.log(mySection)
-	},[showEditorItems ])
+	},[showEditorItems, mySection])
 	
 
 	return (
 		<div className="contentContainer">
 		<div className="contentContainer__content">
 		
-
+		  
                   {mySection === 'contact' ? <ContactForm />  : null ||
                   mySection === 'objective' ? <Objective /> : null ||
                   mySection === 'work experience' ? <WorkExperience /> : null||
