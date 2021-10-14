@@ -5,7 +5,7 @@ import './MenuItems.css';
 function MenuItems() {
 
 	const showMenuItems = useSelector(state => state.isOpen);
-
+	
 
 	
 
@@ -14,7 +14,7 @@ function MenuItems() {
 	const sections = ["contact", "objective", "work experience", "education", "skills", "language", "interest" ];
 
 
-	const [closeMenuItems, setCloseMenuItems] = useState(false)
+	const [closeMenuItems, setCloseMenuItems] = useState(sections)
 
 
 	
@@ -34,6 +34,7 @@ function MenuItems() {
 			type: 'CLOSE_MENU-ITEMS',
 			closeMenuItems: closeMenuItems
 		  })
+		  console.log(closeMenuItems)
 	}
 	    
 	
@@ -57,7 +58,7 @@ function MenuItems() {
                                                 </button>   
                                         ))}
                                 </div>
-		        </div> : null }
+		        </div> : !showMenuItems }
             
                 </div>
 	)

@@ -8,7 +8,10 @@ const initState = {
 	cvTempSelection: null,
 	isOpen: false,
 	editorMobile: null,
-	closeMenuItems: false
+	closeMenuItems: null,
+	showCvItem: null,
+	showEditorFooter: null,
+	showPreviewItem: null
 }
 	
 	
@@ -64,8 +67,25 @@ const Reducer = (state = initState,action) => {
 				...state,
 				closeMenuItems : action.closeMenuItems
 			}
-	default:
-		return state
+		case "SHOW_CVTEMP_ITEM":
+			return {
+				...state,
+				showCvItem: action.showCvItem
+			}
+		case "SHOW_EDITOR_FOOTER":
+			return {
+				...state,
+				showEditorFooter: action.showEditorFooter
+			}
+		case "SHOW_PREVIEW_ITEM":
+			return {
+				...state,
+				showPreviewItem: action.showPreviewItem
+			}
+		
+		
+	        default:
+		        return state
 	}
 }
 

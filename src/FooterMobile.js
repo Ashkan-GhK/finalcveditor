@@ -1,13 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import './styles/FooterMobile.css';
 
 function FooterMobile() {
+
+	const dispatch = useDispatch();
+
+	const [showCvItem, setShowCvItem] = useState('cvtemplates');
+	const [showEditorFooter, setShowEditorFooter] = useState('editor');
+	const [showPreviewItem, setShowPreviewItem] = useState('preview');
+
+	const handleClick = (e) => {
+		const btnValue = e.target.value;
+		console.log(btnValue)
+
+		if(btnValue ==="cvtemplates") {
+			setShowCvItem(btnValue)
+			console.log(showCvItem)
+		}
+		else if(btnValue ==="editor") {
+			setShowEditorFooter(btnValue)
+			console.log(btnValue)
+			
+		}
+		else if (btnValue ==="preview") {
+			setShowPreviewItem(btnValue)
+			console.log(btnValue)
+		}
+		else {
+			return null
+		}
+			
+			dispatch({
+				type:"SHOW_CVTEMP_ITEM",
+				showCvItem: showCvItem
+			})
+			dispatch({
+				type:"SHOW_EDITOR_FOOTER",
+				showEditorFooter: showEditorFooter
+			})
+			dispatch({
+				type:"SHOW_PREVIEW_ITEM",
+				showPreviewItem: showPreviewItem
+			})
+		
+	}
 	return (
 		<div className="footermobile">
                     <div className="footermobile__menu__item__container">
-			  <div className="footermobile__item">Cv templates</div>  
-			   <div className="footermobile__item">Editor</div> 
-			    <div className="footermobile__item">Preview</div>                        
+			  <div className="footermobile__item"><button className="footermobile__item__cvtemplate" onClick={handleClick} value={"cvtemplates"}>Cv templates</button></div>  
+			   <div className="footermobile__item"><button className="footermobile__item__editor" onClick={handleClick} value={"editor"}>Editor</button></div> 
+			    <div className="footermobile__item"><button className="footbarmobile__item__preview" onClick={handleClick} value={"preview"}>Preview</button></div>                        
                     </div>
                 </div>
 	)

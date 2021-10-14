@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import ContactForm from '../../contactdetails/ContactForm';
 import Eduacation from '../../education/Eduacation';
@@ -12,11 +12,22 @@ import WorkExperience from '../../workexperience/WorkExperience';
 function ContentContainer() {
 
 	const showEditorItems = useSelector(state => state.editorMobile);
+	const closeMenuItems = useSelector(state => state.closeMenuItems);
+
+	const showMenuItems = useSelector(state => state.isOpen);
 
 
+	const [closeEditorSection, setCloseEditorSection] = useState(closeMenuItems)
 
 
-	
+	// useEffect((closeEditorSection) => {
+	// 	if(showMenuItems) {
+	// 		setCloseEditorSection(!showMenuItems)
+	// 	}
+	// 	console.log(closeEditorSection)
+	// },[closeEditorSection])
+
+
 
 	return (
 		<div className="contentContainer">
