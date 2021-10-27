@@ -6,15 +6,14 @@ function TopBar() {
 
     const dispatch = useDispatch();
 
-    const btnKey = ["cvTemplates"]
     
-    const [cvTempSelection, setCvTempSelection] = useState("");
+    const [cvTempSelection, setCvTempSelection] = useState('cvTemplates');
     
     function showCvTempComponent (e) {
         e.preventDefault();
-        console.log()
-        setCvTempSelection(btnKey)
+        setCvTempSelection(null)
 
+        // console.log(cvTempSelection)
         dispatch({
           type: 'SHOW_CVTEMPLATES',
           cvTempSelection: cvTempSelection
@@ -29,7 +28,7 @@ function TopBar() {
             <div className="topBar__left">
                 <div className="topBar__left__button">
                     <button  type="button" 
-                       key={cvTempSelection}
+                       value={"cvTemplates"}
                        onClick={showCvTempComponent}
                        className='cvtemp'>
                         CV Template

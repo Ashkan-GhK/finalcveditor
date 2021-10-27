@@ -6,11 +6,21 @@ import MobileNavbar from './mobilenavbar/MobileNavbar';
 import FooterMobile from '../../FooterMobile';
 import CvTemplates from '../CvTemplates';
 import { useSelector } from 'react-redux';
+import MenuItems from './mobilenavbar/MenuItems';
+import ResumeOne from '../resumes/resumeone/ResumeOne';
 function MobileBody() {
 
     const showEditorItems = useSelector(state => state.editorMobile);
 
 	const showMenuItems = useSelector(state => state.isOpen);
+
+    const showCvTemp = useSelector(state => state.showCvItem);
+
+    const showEditor = useSelector(state => state.showEditorFooter);
+    
+    const showCvPreview = useSelector(state => state.showPreviewItem);
+
+    
 
 
     return (
@@ -19,9 +29,10 @@ function MobileBody() {
             <MobileNavbar/>
             {/* CONTENT CONTAINER */}
             
-            {showMenuItems && <ContentContainer /> }
-            {!showEditorItems && <CvTemplates />}
-
+            {/* {showMenuItems && <ContentContainer /> } */}
+            {showCvTemp && <CvTemplates />}
+            {showEditor ? <ContentContainer/> : null}
+            {showCvPreview && <ResumeOne/>}
 
                      {/* CV TEMPLATE */}
 

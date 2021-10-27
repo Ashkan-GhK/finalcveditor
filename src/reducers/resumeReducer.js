@@ -13,7 +13,7 @@ const initState = {
 	showEditorFooter: null,
 	showPreviewItem: null
 }
-	
+
 	
 const Reducer = (state = initState,action) => {
 	switch (action.type) {

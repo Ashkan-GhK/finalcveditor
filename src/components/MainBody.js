@@ -18,26 +18,35 @@ import ResumeOne from './resumes/resumeone/ResumeOne';
 function MainBody() {
 
     const showCvTempComponent = useSelector(state => state.cvTempSelection);
-    const showEditorMobile = useSelector(state => state.editorMobile);
 
     const sections = ["contact", "objective", "work experience", "education", "skills", "language", "interest" ];
 
-    const [mySection, setMySection] = useState('');
-    const [showCv, setShowCv] =useState("")
-    const [showEditor, setShowEditor] = useState("");
-
-    useEffect (() => {
-       
-        setShowCv('cvtest')
-        setMySection(showCv)
-     //    console.log(mySection)
-     //    console.log(showCv)
-     setShowEditor('showeditor')
+    const [mySection, setMySection] = useState(null);
     
-     setMySection(showEditor)
-
-},[showCvTempComponent, showEditorMobile])
-
+    const handleClick = (e) => {
+       
+        setMySection(e.target.value)
+        // console.log(mySection)
+        if(showCvTempComponent==='cvTemplates') {
+            setMySection(null) 
+        }
+        
+    }
+useEffect((e) => {
+ if(showCvTempComponent==='cvTemplates') {
+    console.log('oooops')
+    setMySection('cvTemplates')
+ } else if (showCvTempComponent=== null && mySection==='contact') {
+     console.log('jiiip') 
+     setMySection('contact')
+ }
+ console.log(showCvTempComponent)
+//AFTER PAGE LOADS(SHOCVTEMPCOMPONENT:UNDEFINE/MYSECTION: NULL), 
+//AND AFTER CLICK ON SIDEBAR, --*SHOWCVTEMPCOMPONENTS BECOME NULL && 
+//MYSECTION BECOME BTNVALU*--  AFTER CLICK ON CV TEMPLATE BTN  
+//--*SHOWCVTEMPCOMPONENT 'CVTEMPLATES' && MYSECTION BECOME NULL
+ console.log(mySection)
+},[showCvTempComponent, mySection])
 
    
    
@@ -51,8 +60,9 @@ return (
                         <button
                            type="button"
                            key={section}
+                           value={section}
                            className={"sidebar__section"}
-                           onClick={() => setMySection( section )}
+                           onClick={handleClick}
                         >
                             {section.toLocaleUpperCase()}
                         </button>   
@@ -62,16 +72,19 @@ return (
             {/* Left Section */}
             <div className="mainbody__left">
             <div className="editor__preview">
-                    {!mySection && <CvTemplates/>}
-
-                  {mySection === 'cvtest' ? <CvTemplates/> : null ||
-                  mySection === 'contact' ? <ContactForm />  : null ||
+                    {mySection===null  && <CvTemplates/>}
+                    {mySection==='cvTemplates' && <CvTemplates/>}
+                    {mySection==='content' && <ContactForm />}
+                    
+                
+                      
+                  {/* {mySection === 'contact'  ? <ContactForm /> : null ||
                   mySection === 'objective' ? <Objective /> : null ||
                   mySection === 'work experience' ? <WorkExperience /> : null||
                   mySection === 'education' ? <Education /> : null ||
                   mySection === 'skills' ? <Skills /> : null ||
                   mySection === 'language' ? <Language /> : null ||
-                  mySection === 'interest' ? <Interest /> : null}
+                  mySection === 'interest' ? <Interest /> : null} */}
                 </div>
             </div>
             
