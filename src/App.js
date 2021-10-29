@@ -11,7 +11,7 @@ function App() {
       <Header/>
       <TopBar/>
       <MainBody/>
-      <MobileBody />
+      {/* <MobileBody /> */}
   
     </div>
   );

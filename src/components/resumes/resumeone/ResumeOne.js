@@ -11,6 +11,7 @@ function ResumeOne() {
 	const showAddress = useSelector(state => state.address);
 	const showObjective = useSelector(state => state.objective);
 
+        
 	
 	
 

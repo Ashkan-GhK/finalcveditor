@@ -11,6 +11,7 @@ import Language from '../components/language/Language';
 import Interest from '../components/interest/Interest';
 import Skills from '../components/skills/Skills';
 import ResumeOne from './resumes/resumeone/ResumeOne';
+import CvThree from './resumes/resumethree/CvThree';
 
 
 
@@ -72,19 +73,19 @@ return (
             {/* Left Section */}
             <div className="mainbody__left">
             <div className="editor__preview">
-                    {mySection===null  && <CvTemplates/>}
-                    {mySection==='cvTemplates' && <CvTemplates/>}
-                    {mySection==='content' && <ContactForm />}
+                    {/* {mySection===null  && <CvTemplates/>} */}
+                    {/* {mySection==='cvTemplates' && <CvTemplates/>}
+                    {mySection==='content' && <ContactForm />} */}
                     
                 
                       
-                  {/* {mySection === 'contact'  ? <ContactForm /> : null ||
+                  {mySection === 'contact'  ? <ContactForm /> : null ||
                   mySection === 'objective' ? <Objective /> : null ||
                   mySection === 'work experience' ? <WorkExperience /> : null||
                   mySection === 'education' ? <Education /> : null ||
                   mySection === 'skills' ? <Skills /> : null ||
                   mySection === 'language' ? <Language /> : null ||
-                  mySection === 'interest' ? <Interest /> : null} */}
+                  mySection === 'interest' ? <Interest /> : null}
                 </div>
             </div>
             
@@ -92,7 +93,7 @@ return (
             {/* Right Section */}
             <div className="mainbody__right">
                 <div className="cv__preview">
-                    <ResumeOne />
+                    <CvThree />
                 </div>
             </div>
             
