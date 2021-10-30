@@ -1,6 +1,7 @@
 import '../resumeone/ResumeOne.css';
 import blackimg from '../../../image/blackimg.png';
 import {useSelector} from 'react-redux';
+import { useEffect, useState } from 'react';
 
 function ResumeOne() {
 
@@ -12,7 +13,7 @@ function ResumeOne() {
 	const showObjective = useSelector(state => state.objective);
 
         
-	
+
 	
 
 

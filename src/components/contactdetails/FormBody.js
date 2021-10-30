@@ -1,25 +1,40 @@
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import '../../styles/contactform/FormBody.css';
 import {useDispatch} from 'react-redux';
+
 
 
 function FormBody() {
 	const dispatch = useDispatch();
 	// FIRSTNAME
-	const [input, setInput] = useState("");
+
+	const [input, setInput] = useState(JSON.parse(localStorage.getItem('firstName')) || '');
         const [userVal, setUserVal] = useState("");
+
+
+	// Save To Local Storage FirstName
+	const [storeInput, setStoreInput] = useState("");
+	useEffect(() => {
+		localStorage.setItem('firstName',JSON.stringify(storeInput));
+		console.log(input)
+	}, [input, storeInput]);
         const handleInput = event => {
              setInput(event.target.value);
+	     setStoreInput(event.target.value);
         };
 
+	
+	
         let logValue = () => {
           console.log(userVal)
           setUserVal(input)
         };
         function showInput (input) {
+		
           dispatch({
             type: 'SHOW_INPUT',
             input: input
+
           })
         }
 	
@@ -64,7 +79,6 @@ function FormBody() {
 			type: 'SHOW_PHONENUM_INPUT',
 			phoneNum : phoneNum
 		})
-		console.log(dispatch.phoneNum)
 	}
 
 

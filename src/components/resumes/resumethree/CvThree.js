@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import '../resumethree/CvThree.css';
 
@@ -10,6 +10,16 @@ function CvThree() {
 	const showEmail = useSelector(state => state.email);
 	const showAddress = useSelector(state => state.address);
 	const showObjective = useSelector(state => state.objective);
+
+	
+ 
+	const [defaultName, setDefaultName] = useState('Alex')
+	useEffect(() => {
+		const loadName = JSON.parse(localStorage.getItem('firstName') || 'Alex')
+		setDefaultName(loadName)
+		console.log(defaultName)	
+
+	},[defaultName])
 
 
 	return (
@@ -70,7 +80,7 @@ function CvThree() {
 	            <div className="cvThree__right">
 				<div className="cvThree__right__content">
 					<div className="cvThree__right__content__name">
-						<p>{showUserInput.length-1 >= 0 ? showUserInput : "Alex"}&nbsp;
+						<p>{showUserInput.length-1 >= 0 ? showUserInput : defaultName}&nbsp;
 					 {showUserLastName.length-1 >= 0 ? showUserLastName : "Gakan"}</p>
 					</div>
 					<div className="cvThree__right__content__objective">

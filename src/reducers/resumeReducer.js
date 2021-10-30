@@ -1,5 +1,5 @@
 const initState = {
-	input: 'Alex',
+	input: JSON.parse(localStorage.getItem('firstName')) || 'Alex',
 	lastName: 'Gakan',
 	phoneNum: '+447779277799',
 	email: 'alex@gmail.com',
@@ -14,7 +14,7 @@ const initState = {
 	showPreviewItem: null
 }
 
-	
+
 const Reducer = (state = initState,action) => {
 	switch (action.type) {
 		case "SHOW_INPUT":
