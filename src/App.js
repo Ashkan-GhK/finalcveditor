@@ -4,7 +4,6 @@ import TopBar from './components/TopBar';
 import './App.css';
 import MobileBody from './components/mobileversion/MobileBody';
 
-
 function App() {
   return (
     <div className="app">
@@ -17,3 +16,5 @@ function App() {
   );
 }
 export default App;
+
+

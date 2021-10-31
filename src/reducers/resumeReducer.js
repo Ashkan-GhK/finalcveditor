@@ -1,6 +1,8 @@
 const initState = {
+	// GET INPUT DATA FROM LOCALSTORAGE IF THERE IS ANY DATA, OTHERWISE IT SHOWS ALEX AS A DEFAULT NAME
 	input: JSON.parse(localStorage.getItem('firstName')) || 'Alex',
-	lastName: 'Gakan',
+	// GET INPUT DATA FROM LOCALSTORAGE IF THERE IS ANY DATA, OTHERWISE IT SHOWS GAKAN AS A DEFAULT LASTNAME
+	lastName: JSON.parse(localStorage.getItem('lastName')) || 'Gakan',
 	phoneNum: '+447779277799',
 	email: 'alex@gmail.com',
 	address: '42 Fulham Palace Rd w6 9ph',
@@ -18,7 +20,9 @@ const initState = {
 const Reducer = (state = initState,action) => {
 	switch (action.type) {
 		case "SHOW_INPUT":
+		
 			return {
+				
 				...state,
 				input: action.input
 			}

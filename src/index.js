@@ -11,6 +11,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 const store = createStore(resumeReducer, composeWithDevTools());
 
+
 ReactDOM.render(
   <Provider store={store}>
     <App />

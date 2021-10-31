@@ -11,15 +11,39 @@ function CvThree() {
 	const showAddress = useSelector(state => state.address);
 	const showObjective = useSelector(state => state.objective);
 
-	
- 
-	const [defaultName, setDefaultName] = useState('Alex')
-	useEffect(() => {
-		const loadName = JSON.parse(localStorage.getItem('firstName') || 'Alex')
-		setDefaultName(loadName)
-		console.log(defaultName)	
 
-	},[defaultName])
+ 
+	// GET FIRST NAME FROM LOCAL STORAGE(WE USE LOCALSTORAGE.GETITEM IN REDUCER FILE AS WELL)
+	var defaultName;
+	var defaultLastName;
+	useEffect(() => {
+		defaultName = JSON.parse(localStorage.getItem('firstName'))
+		if(JSON.parse(localStorage.getItem('firstName'))) {
+			defaultName = showUserInput
+		        console.log(defaultName)
+		} else {
+			defaultName='Alex'
+		}
+
+		defaultLastName = JSON.parse(localStorage.getItem('lastName'))
+		if(JSON.parse(localStorage.getItem('lastName'))) {
+			defaultLastName = showUserLastName
+		        console.log(defaultLastName)
+		} else {
+			defaultName='Gakan'
+		}
+			
+
+	},[defaultName, showUserInput, defaultLastName, showUserLastName]);
+	
+	// // GET LAST NAME FROM LOCAL STORAGE(USE LOCALSTORAGE.GETITEM IN REDUCER FILE AS WELL)
+	// const [defaultLastName, setDefaultLastName] = useState('Gakan')
+	// useEffect(() => {
+	// 	const loadLastName = JSON.parse(localStorage.getItem('lastName') || 'Gakan')
+	// 	setDefaultLastName(loadLastName)
+	// 	console.log(defaultLastName)	
+
+	// },[defaultLastName])
 
 
 	return (
@@ -75,19 +99,17 @@ function CvThree() {
 					</div>
 				</div>
 			</div>
-
 			{/* Right Section */}
 	            <div className="cvThree__right">
 				<div className="cvThree__right__content">
 					<div className="cvThree__right__content__name">
 						<p>{showUserInput.length-1 >= 0 ? showUserInput : defaultName}&nbsp;
-					 {showUserLastName.length-1 >= 0 ? showUserLastName : "Gakan"}</p>
+					 {showUserLastName.length-1 >= 0 ? showUserLastName : defaultLastName }</p>
 					</div>
 					<div className="cvThree__right__content__objective">
 						<p>{showObjective.length-1 >= 0 ? showObjective : "Would like to gain the necessary experience to hopefully become Operations Manager of all services running across the platform "}</p>
 					</div>
 				</div>
-
 				{/* WORK EXPERIENCE */}
 
 				<p className="title__workexsperience">Work Experience</p>

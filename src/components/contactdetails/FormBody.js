@@ -6,44 +6,40 @@ import {useDispatch} from 'react-redux';
 
 function FormBody() {
 	const dispatch = useDispatch();
+
 	// FIRSTNAME
 
-	const [input, setInput] = useState(JSON.parse(localStorage.getItem('firstName')) || '');
+	const [input, setInput] = useState(JSON.parse(localStorage.getItem('firstName')) || 'Alex');
         const [userVal, setUserVal] = useState("");
-
-
 	// Save To Local Storage FirstName
-	const [storeInput, setStoreInput] = useState("");
-	useEffect(() => {
-		localStorage.setItem('firstName',JSON.stringify(storeInput));
-		console.log(input)
-	}, [input, storeInput]);
-        const handleInput = event => {
-             setInput(event.target.value);
-	     setStoreInput(event.target.value);
-        };
+	// const [storeInput, setStoreInput] = useState("");
+	
+        const handleInput = async(event) => {
+               setInput(event.target.value);
+	     await localStorage.setItem('firstName',JSON.stringify(input));
 
-	
-	
+	//      setStoreInput(event.target.value);
+        };	
         let logValue = () => {
           console.log(userVal)
           setUserVal(input)
         };
-        function showInput (input) {
-		
+        function showInput (input) {	
           dispatch({
             type: 'SHOW_INPUT',
             input: input
-
           })
         }
-	
+
 	// LASTNAME
-	const [lastName, setLastName] = useState("");
+	const [lastName, setLastName] = useState(JSON.parse(localStorage.getItem('lastName')) || 'Gakan');
 	const [lastNameVal, setLastNameVal] = useState("");
 
-	const lastNameInput = event => {
+	const lastNameInput = async(event) => {
 		setLastName(event.target.value);
+		await localStorage.setItem('firstName',JSON.stringify(input));
+
+
 	   };
    
 	   let logLastNameVal = () => {
@@ -58,6 +54,27 @@ function FormBody() {
 			lastName : lastName
 		})
 	}
+	
+	useEffect(() => {
+		const firstName = localStorage.setItem('firstName',JSON.stringify(input));
+		if (firstName) {
+			setInput(firstName)
+		} else {
+			setInput(JSON.parse(localStorage.getItem('firstName')))
+		}
+		console.log(input)
+		const userLastName = localStorage.setItem('lastName',JSON.stringify(lastName));
+		if(userLastName) {
+			setLastName(userLastName)
+		} else {
+			setLastName(JSON.parse(localStorage.getItem('lastName')))
+
+		}
+	}, [input,lastName]);
+	
+
+
+	
 
 	//PHONE NUMBER
 
@@ -134,12 +151,12 @@ function FormBody() {
 			<div className="formbody__input__container">
 				<div className="formbody__input">
 				        <label for="fname">First Name</label><br />
-					<input onChange={handleInput}  type="text" id="fname" name="fname" maxLength="16" />
+					<input  onChange={handleInput} value={input} type="text" id="fname" name="fname" maxLength="16" />
 					<p onChange={logValue}>{showInput(input)}</p>
 				</div>
 				<div className="formbody__input">
 				        <label for="lname">Last Name</label> <br />
-					<input onChange={lastNameInput} type="text" id="lname"  name="lname" maxLength="16"/>
+					<input onChange={lastNameInput}  value={lastName} type="text" id="lname"  name="lname" maxLength="16"/>
 					<p onChange={logLastNameVal}>{showLastName(lastName)}</p>
 
 				</div>
