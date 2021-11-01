@@ -29,19 +29,9 @@ function MenuContainer() {
 
     // I AM WORKING ON THIS PART TO BE ABLE TO CLOSE THE MENU IF THE EDITOR BUTTON GET CLICKS ******
     
-    // useEffect(()=>{
-	//     setNavTitle(showEditorItems)
-        
-        
-           
-     
-	//     console.log(navTitle)
-	//     console.log(showEditorItems)
-    //     console.log(isClosed)
-    //     console.log(menuEditSection)
-
-	
-    // }, [showEditorItems, navTitle, isClosed, isOpen, closeMenuItems, menuEditSection])
+    useEffect(()=>{
+	    setNavTitle(showEditorItems)	
+    }, [showEditorItems, navTitle, isOpen, menuEditSection])
 
 
 	return (

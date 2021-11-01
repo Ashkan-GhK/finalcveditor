@@ -7,10 +7,10 @@ function MobileNavbar() {
 		
 		<div className="mobileNavbar">
 			{/* MENU CONTAINER */}
-			<MenuContainer />
+			{/* <MenuContainer /> */}
 
 			{/* MENU ITEMS */}
-			<MenuItems />
+			{/* <MenuItems /> */}
 			{/* <MenuItems /> */}
 		</div>
 	)
