@@ -10,12 +10,14 @@ function CvThree() {
 	const showEmail = useSelector(state => state.email);
 	const showAddress = useSelector(state => state.address);
 	const showObjective = useSelector(state => state.objective);
+	const showPosition = useSelector(state => state.position);
 
 
  
 	// GET FIRST NAME FROM LOCAL STORAGE(WE USE LOCALSTORAGE.GETITEM IN REDUCER FILE AS WELL)
 	var defaultName;
 	var defaultLastName;
+	var defaultPosition;
 	useEffect(() => {
 		defaultName = JSON.parse(localStorage.getItem('firstName'))
 		if(JSON.parse(localStorage.getItem('firstName'))) {
@@ -32,18 +34,19 @@ function CvThree() {
 		} else {
 			defaultName='Gakan'
 		}
+
+		defaultPosition = JSON.parse(localStorage.getItem('position'))
+		if(JSON.parse(localStorage.getItem('position'))) {
+			defaultPosition = showPosition
+			console.log(defaultPosition)
+		} else {
+			defaultPosition='Project Manager'
+		}
 			
 
-	},[defaultName, showUserInput, defaultLastName, showUserLastName]);
+	},[defaultName, showUserInput, defaultLastName, showUserLastName, defaultPosition,showPosition]);
 	
-	// // GET LAST NAME FROM LOCAL STORAGE(USE LOCALSTORAGE.GETITEM IN REDUCER FILE AS WELL)
-	// const [defaultLastName, setDefaultLastName] = useState('Gakan')
-	// useEffect(() => {
-	// 	const loadLastName = JSON.parse(localStorage.getItem('lastName') || 'Gakan')
-	// 	setDefaultLastName(loadLastName)
-	// 	console.log(defaultLastName)	
-
-	// },[defaultLastName])
+	
 
 
 	return (
@@ -111,7 +114,7 @@ function CvThree() {
 					</div>
 				</div>
 				{/* WORK EXPERIENCE */}
-
+				
 				<p className="title__workexsperience">Work Experience</p>
 				<div className="cvThree__right__content__work">
 					
@@ -119,7 +122,7 @@ function CvThree() {
 					<div className="cvThree__right__content__work__left">
 
 					<div className="cvThree__right__content__jobbTitle">
-						<p>Project Manager</p>
+						<p>{showPosition.length-1 >= 0 ? showPosition : defaultPosition}</p>
 					</div>
 					<div className="cvThree__right__content__companyName">
 						<p>Google</p>

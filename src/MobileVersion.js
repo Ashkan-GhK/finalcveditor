@@ -12,13 +12,14 @@ import WorkExperience from './components/workexperience/WorkExperience';
 import Education from './components/education/Eduacation';
 import Interest from  './components/interest/Interest';
 import CvThree from './components/resumes/resumethree/CvThree';
+import WorkExperienceEditor from './components/workexperience/WorkExperienceEditor';
 
 
 function MobileVersion() {
 
 	const [isOpen, setIsOpen] = useState(true);
 	const[navTitle, setNavTitle] = useState('CV Templates');
-	const[closeMenu,setCloseMenu] = useState('close')
+	// const[closeMenu,setCloseMenu] = useState('close')
 	const sections = ["contact", "objective", "work experience", "education", "skills", "language", "interest" ];
 	const [mySection, setMySection] = useState();
 
@@ -58,6 +59,7 @@ function MobileVersion() {
 	    
 	return (
 		<div className="mobileversion">
+
 			<div className="mobileversion__container">
 				{/* MOBILE VERSION HEADER MENU */}
 				<div className="menuContainer">
@@ -102,7 +104,7 @@ function MobileVersion() {
 		  mySection === 'showCvTemp' ? <CvTemplates /> : null ||
                   mySection === 'contact' ? <ContactForm />  : null ||
                   mySection === 'objective' ? <Objective /> : null ||
-                  mySection === 'work experience' ? <WorkExperience /> : null||
+                  mySection === 'work experience' ? <WorkExperienceEditor /> : null||
                   mySection === 'education' ? <Education /> : null ||
                   mySection === 'skills' ? <Skills /> : null ||
                   mySection === 'language' ? <Language /> : null ||

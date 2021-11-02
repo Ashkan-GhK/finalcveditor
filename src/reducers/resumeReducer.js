@@ -13,7 +13,9 @@ const initState = {
 	closeMenuItems: null,
 	showCvItem: null,
 	showEditorFooter: null,
-	showPreviewItem: null
+	showPreviewItem: null,
+	position: JSON.parse(localStorage.getItem('position')) || 'Project Manager'
+	
 }
 
 
@@ -85,6 +87,11 @@ const Reducer = (state = initState,action) => {
 			return {
 				...state,
 				showPreviewItem: action.showPreviewItem
+			}
+		case "SHOW_POSITION":
+			return {
+				...state,
+				position: action.position
 			}
 		
 		
