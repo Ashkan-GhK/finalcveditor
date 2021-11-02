@@ -33,28 +33,123 @@ function WorkExperienceEditor() {
         }
 
 	// COMPANY
-	const [lastName, setLastName] = useState(JSON.parse(localStorage.getItem('lastName')) || 'Gakan');
-	const [lastNameVal, setLastNameVal] = useState("");
+	const [companyName, setCompanyName] = useState(JSON.parse(localStorage.getItem('company')) || 'Google');
+	const [companyNameVal, setCompanyNameVal] = useState("");
 
-	const lastNameInput = async(event) => {
-		setLastName(event.target.value);
-		await localStorage.setItem('firstName',JSON.stringify(position));
+	const companyNameInput = async(event) => {
+		setCompanyName(event.target.value);
+		await localStorage.setItem('company',JSON.stringify(companyName));
+		
+
+	   };
+   
+	   let logCompanyNameVal = () => {
+		   console.log(companyNameVal)
+	     setCompanyNameVal(companyName);
+	   };
+
+
+	function showCompanyName (companyName) {
+		dispatch({
+			type: 'SHOW_COMPANY_NAME',
+			companyName : companyName
+		})
+	}
+
+	//LOCATION OF COMPANY
+	
+	const [companyLocation, setCompanyLocation] = useState(JSON.parse(localStorage.getItem('companylocation')) || 'London');
+	const [companyLocationVal, setCompanyLocationNumVal] = useState("");
+
+	const CompanyLocationInput = async(event) => {
+		setCompanyLocation(event.target.value);
+		await localStorage.setItem('companylocation',JSON.stringify(companyLocation));
 
 
 	   };
    
-	   let logLastNameVal = () => {
-		   console.log(lastNameVal)
-	     setLastNameVal(lastName);
+	   let logCompanyLocationVal = () => {
+		   console.log(companyLocationVal)
+	     setCompanyLocationNumVal(companyLocation);
 	   };
 
 
-	function showLastName (lastName) {
+	function showCompanyLocation (companyLocation) {
 		dispatch({
-			type: 'SHOW_LASTNAME_INPUT',
-			lastName : lastName
+			type: 'SHOW_COMPANY_LOCATION',
+			companyLocation : companyLocation
 		})
 	}
+
+
+	//DATE FROM
+
+	const [workDateFrom, setWorkDateFrom] = useState(JSON.parse(localStorage.getItem('workdatefrom')) || 'Sep 2020');
+	const [workDateFromVal, setWorkDateFromVal] = useState("");
+
+	const workDateFromInput = async(event) => {
+		setWorkDateFrom(event.target.value);
+		await localStorage.setItem('workdatefrom',JSON.stringify(workDateFrom));
+	   };
+   
+	   let logWorkDateFromVal = () => {
+		   console.log(workDateFromVal)
+	           setWorkDateFromVal(workDateFrom);
+	   };
+
+
+	function showWorkDateFrom (workDateFrom) {
+		dispatch({
+			type: 'SHOW_WORK_DATE_FROM',
+			workDateFrom : workDateFrom
+		})
+	}
+
+	//DATE TO
+	const [workDateTo, setWorkDateTo] = useState(JSON.parse(localStorage.getItem('workdateto')) || 'Current');
+	const [workDateToVal, setWorkDateToVal] = useState("");
+	
+	const workDateToInput = async(event) => {
+		setWorkDateTo(event.target.value);
+		await localStorage.setItem('workdateto',JSON.stringify(workDateTo));
+	   };
+   
+	   let logWorkDateToVal = () => {
+		   console.log(workDateToVal)
+	           setWorkDateToVal(workDateTo);
+	   };
+
+
+	function showWorkDateTo (workDateTo) {
+		dispatch({
+			type: 'SHOW_WORK_DATE_TO',
+			workDateTo : workDateTo
+		})
+	}
+
+	// WORK DESCRIPTION
+	const [workDescription, setWorkDescription] = useState(JSON.parse(localStorage.getItem('workdescription')) || 'lab lab labb');
+	const [workDescriptionVal, setWorkDescriptionVal] = useState("");
+	
+	const workDescriptionInput = async(event) => {
+		setWorkDescription(event.target.value);
+		await localStorage.setItem('workdescription',JSON.stringify(workDescription));
+	   };
+   
+	   let logWorkDescription = () => {
+		   console.log(workDescriptionVal)
+	           setWorkDescriptionVal(workDescription);
+	   };
+
+
+	function showWorkDescription (workDescription) {
+		dispatch({
+			type: 'SHOW_WORK_DESCRIPTION',
+			workDescription : workDescription
+		})
+	}
+
+
 	
 	useEffect(() => {
 		const myPosition = localStorage.setItem('position',JSON.stringify(position));
@@ -63,86 +158,47 @@ function WorkExperienceEditor() {
 		} else {
 			setPosition(JSON.parse(localStorage.getItem('position')))
 		}
-		console.log(position)
-		const userLastName = localStorage.setItem('lastName',JSON.stringify(lastName));
-		if(userLastName) {
-			setLastName(userLastName)
+
+		const userCompanyName = localStorage.setItem('company',JSON.stringify(companyName));
+		if(userCompanyName) {
+			setCompanyName(userCompanyName)
 		} else {
-			setLastName(JSON.parse(localStorage.getItem('lastName')))
+			setCompanyName(JSON.parse(localStorage.getItem('company')))
 
 		}
-	}, [position,lastName]);
+		const myCompanyLocation = localStorage.setItem('companylocation',JSON.stringify(companyLocation));
+		if (myCompanyLocation) {
+			setCompanyLocation(myCompanyLocation)
+		} else {
+			setCompanyLocation(JSON.parse(localStorage.getItem('companylocation')))
+		}
+		const myWorkDateFrom = localStorage.setItem('workdatefrom',JSON.stringify(workDateFrom));
+		if (myWorkDateFrom) {
+			setWorkDateFromVal(myWorkDateFrom)
+		} else {
+			setWorkDateFromVal(JSON.parse(localStorage.getItem('workdatefrom')))
+		}
+		const myWorkDateTo = localStorage.setItem('workdateto',JSON.stringify(workDateTo));
+		if (myWorkDateTo) {
+			setWorkDateToVal(myWorkDateTo)
+		} else {
+			setWorkDateToVal(JSON.parse(localStorage.getItem('workdateto')))
+		}
+		const myWorkDescription = localStorage.setItem('workdescription',JSON.stringify(workDescription));
+		if (myWorkDescription) {
+			setWorkDescription(myWorkDescription)
+		} else {
+			setWorkDescriptionVal(JSON.parse(localStorage.getItem('workdescription')))
+		}
+
+
+	}, [position, companyName, companyLocation, workDateFrom, workDateTo,workDescription]);
 	
 
 
 	
 
-	//LOCATION OF COMPANY
-
-	const [phoneNum, setPhoneNum] = useState("");
-	const [phoneNumVal, setPhoneNumVal] = useState("");
-
-	const phoneNumInput = event => {
-		setPhoneNum(event.target.value);
-	   };
-   
-	   let logPhoneNumVal = () => {
-		   console.log(phoneNumVal)
-	     setPhoneNumVal(phoneNum);
-	   };
-
-
-	function showPhoneNum (phoneNum) {
-		dispatch({
-			type: 'SHOW_PHONENUM_INPUT',
-			phoneNum : phoneNum
-		})
-	}
-
-
-	//DATE FROM
-
-	const [email, setEmail] = useState("");
-	const [emailVal, setEmailVal] = useState("");
-
-	const emailUserInput = event => {
-		setEmail(event.target.value);
-	   };
-   
-	   let logEmailVal = () => {
-		   console.log(emailVal)
-	           setEmailVal(email);
-	   };
-
-
-	function showEmail (email) {
-		dispatch({
-			type: 'SHOW_EMAIL_INPUT',
-			email : email
-		})
-	}
-
-	//DATE TO
-	const [address, setAddress] = useState("");
-	const [addressVal, setAddressVal] = useState("");
-
-	const addressInput = event => {
-		setAddress(event.target.value);
-	   };
-   
-	   let logAddressVal = () => {
-		   console.log(addressVal)
-	     setAddressVal(address);
-	   };
-
-
-	function showAddress (address) {
-		dispatch({
-			type: 'SHOW_ADDRESS_INPUT',
-			address : address
-		})
-	}
-
+	
 
 
 
@@ -158,32 +214,32 @@ function WorkExperienceEditor() {
 				</div>
 				<div className="formbody__input">
 				        <label for="company">Company</label> <br />
-					<input onChange={lastNameInput}  value={lastName} type="text" id="lname"  name="lname" maxLength="16"/>
-					<p onChange={logLastNameVal}>{showLastName(lastName)}</p>
+					<input onChange={companyNameInput}  value={companyName} type="text" id="lname"  name="lname" maxLength="16"/>
+					<p onChange={logCompanyNameVal}>{showCompanyName(companyName)}</p>
 
 				</div>
 				<div className="formbody__input">
 				        <label for="location">Location</label> <br />
-					<input onChange={phoneNumInput} type="text" id="phone" name="phone" maxLength="16"/>
-					<p onChange={logPhoneNumVal}>{showPhoneNum(phoneNum)}</p>
+					<input onChange={CompanyLocationInput} value={companyLocation} type="text" id="phone" name="phone" maxLength="16"/>
+					<p onChange={logCompanyLocationVal}>{showCompanyLocation(companyLocation)}</p>
 					
 				</div>
 				<div className="formbody__input">
 				        <label for="datefrom">From</label> <br />
-					<input onChange={emailUserInput} type="email" id="email" name="email" maxLength="32"/>
-					<p onChange={logEmailVal}>{showEmail(email)}</p>
+					<input onChange={workDateFromInput} value={workDateFrom} type="email" id="email" name="email" maxLength="32"/>
+					<p onChange={logWorkDateFromVal}>{showWorkDateFrom(workDateFrom)}</p>
 
 				</div>
 				<div className="formbody__input">
 				        <label for="dateto">To</label> <br />
-					<input onChange={addressInput} type="text" id="address" name="address" maxLength="38"/>
-					<p onChange={logAddressVal}>{showAddress(address)}</p>
+					<input onChange={workDateToInput} value={workDateTo} type="text" id="address" name="address" maxLength="38"/>
+					<p onChange={logWorkDateToVal}>{showWorkDateTo(workDateTo)}</p>
 
 				</div>
 				<div className="formbody__input">
 				        <label for="workdescription">Work Description</label><br />
-					<textarea onChange={addressInput} type="text" id="address" name="address" maxLength="38"/>
-					<p onChange={logAddressVal}>{showAddress(address)}</p>
+					<textarea onChange={workDescriptionInput} value={workDescription} type="text" id="address" name="address" maxLength="38"/>
+					<p onChange={logWorkDescription}>{showWorkDescription(workDescription)}</p>
 
 				</div>
 			</div>

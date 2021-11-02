@@ -11,6 +11,13 @@ function CvThree() {
 	const showAddress = useSelector(state => state.address);
 	const showObjective = useSelector(state => state.objective);
 	const showPosition = useSelector(state => state.position);
+	const showCompanyName = useSelector(state => state.companyName);
+	const showCompanyLocation = useSelector(state => state.companyLocation);
+	const showWorkDateFrom = useSelector(state => state.workDateFrom);
+	const showWorkDateTo = useSelector(state => state.workDateTo);
+	const showWorkDescription = useSelector(state => state.workDescription);
+
+
 
 
  
@@ -18,6 +25,15 @@ function CvThree() {
 	var defaultName;
 	var defaultLastName;
 	var defaultPosition;
+	var defaultCompanyName;
+	var defaultCompanyLocation;
+	var defaultWorkDateFrom;
+	var defaultWorkDateTo;
+	var defaultWorkDescription;
+	
+
+
+
 	useEffect(() => {
 		defaultName = JSON.parse(localStorage.getItem('firstName'))
 		if(JSON.parse(localStorage.getItem('firstName'))) {
@@ -42,9 +58,51 @@ function CvThree() {
 		} else {
 			defaultPosition='Project Manager'
 		}
+
+		defaultCompanyName = JSON.parse(localStorage.getItem('company'))
+		if(JSON.parse(localStorage.getItem('company'))) {
+			defaultCompanyName = showCompanyName
+			console.log(defaultCompanyName)
+		} else {
+			defaultCompanyName='Project Manager'
+		}
+		
+		defaultCompanyLocation = JSON.parse(localStorage.getItem('companylocation'))
+		if(JSON.parse(localStorage.getItem('companylocation'))) {
+			defaultCompanyLocation = showCompanyLocation
+			console.log(defaultCompanyLocation)
+		} else {
+			defaultCompanyLocation='London'
+		}
+		
+		defaultWorkDateFrom = JSON.parse(localStorage.getItem('workdatefrom'))
+		if(JSON.parse(localStorage.getItem('workdatefrom'))) {
+			defaultWorkDateFrom = showWorkDateFrom
+			console.log(defaultWorkDateFrom)
+		} else {
+			defaultWorkDateFrom='sep 2020'
+		}
+
+		defaultWorkDateTo = JSON.parse(localStorage.getItem('workdateto'))
+		if(JSON.parse(localStorage.getItem('workdateto'))) {
+			defaultWorkDateTo = showWorkDateTo
+			console.log(defaultWorkDateTo)
+		} else {
+			defaultWorkDateTo='Current'
+		}
+		
+		defaultWorkDescription = JSON.parse(localStorage.getItem('workdescription'))
+		if(JSON.parse(localStorage.getItem('workdescription'))) {
+			defaultWorkDescription = showWorkDescription
+			console.log(defaultWorkDescription)
+		} else {
+			defaultWorkDescription='lab lab lab'
+		}
 			
 
-	},[defaultName, showUserInput, defaultLastName, showUserLastName, defaultPosition,showPosition]);
+	},[defaultName, showUserInput, defaultLastName, showUserLastName, defaultPosition,showPosition,
+	defaultCompanyName,showCompanyName, defaultCompanyLocation, showCompanyLocation
+        , defaultWorkDateFrom,showWorkDateFrom, defaultWorkDateTo,showWorkDateTo, defaultWorkDescription, showWorkDescription]);
 	
 	
 
@@ -118,32 +176,29 @@ function CvThree() {
 				<p className="title__workexsperience">Work Experience</p>
 				<div className="cvThree__right__content__work">
 					
-	
+					
 					<div className="cvThree__right__content__work__left">
 
 					<div className="cvThree__right__content__jobbTitle">
 						<p>{showPosition.length-1 >= 0 ? showPosition : defaultPosition}</p>
 					</div>
 					<div className="cvThree__right__content__companyName">
-						<p>Google</p>
+						<p>{showCompanyName.length-1 >= 0 ? showCompanyName : defaultCompanyName}</p>
 					</div>
 					<div className="cvThree__right__content__city">
-						<p>London</p>
+						<p>{showCompanyLocation.length-1 >= 0 ? showCompanyLocation : defaultCompanyLocation}</p>
 					</div>
 					<div className="cvThree__right__content__date">
-						<div className="dateFrom"><p>Nov 2012 /</p></div>
-						<div className="dateTo"><p>Apr 2021</p></div>
+						<div className="dateFrom"><p>{showWorkDateFrom.length-1 >= 0 ? showWorkDateFrom : defaultWorkDateFrom}</p></div>
+						<div className="dateTo"><p>{showWorkDateTo.length-1 >= 0 ? showWorkDateTo: defaultWorkDateTo}</p></div>
 					</div>
 					
 					</div>
 
 					<div className="cvThree__right__content__work__right">
 						<div className="cvThree__right__content__job__description">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.</p>
-						</div>
-
-
-						
+						<p>{showWorkDescription.length-1 >= 0 ? showWorkDescription: defaultWorkDescription}</p>
+						</div>						
 					</div>
 
 

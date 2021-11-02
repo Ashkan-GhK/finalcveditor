@@ -14,8 +14,15 @@ const initState = {
 	showCvItem: null,
 	showEditorFooter: null,
 	showPreviewItem: null,
-	position: JSON.parse(localStorage.getItem('position')) || 'Project Manager'
-	
+	position: JSON.parse(localStorage.getItem('position')) || 'Project Manager',
+	companyName: JSON.parse(localStorage.getItem('company')) || 'Google',
+	companyLocation: JSON.parse(localStorage.getItem('companylocation')) || 'London',
+	workDateFrom: JSON.parse(localStorage.getItem('workdatefrom')) || 'Sep 2020',	
+	workDateTo: JSON.parse(localStorage.getItem('workdateto')) || 'Current',
+	workDescription: JSON.parse(localStorage.getItem('workdescription')) || 'lab lab lab',
+
+
+		
 }
 
 
@@ -92,6 +99,31 @@ const Reducer = (state = initState,action) => {
 			return {
 				...state,
 				position: action.position
+			}
+		case "SHOW_COMPANY_NAME":
+			return {
+				...state,
+				companyName: action.companyName
+			}
+		case "SHOW_COMPANY_LOCATION":
+			return {
+				...state,
+				companyLocation: action.companyLocation
+			}
+		case "SHOW_WORK_DATE_FROM":
+			return {
+				...state,
+				workDateFrom: action.workDateFrom
+			}
+		case "SHOW_WORK_DATE_TO":
+			return {
+				...state,
+				workDateTo: action.workDateTo
+			}
+		case "SHOW_WORK_DESCRIPTION":
+			return {
+				...state,
+				workDescription: action.workDescription
 			}
 		
 		
