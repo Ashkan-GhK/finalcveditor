@@ -9,10 +9,12 @@ function App() {
   return (
     <div className="app">
       <Header />
-      {/* <TopBar/>
+      <TopBar/>
       <MainBody/>
-      <MobileBody /> */}
+      <div className="mobileVersion">
       <MobileVersion />
+
+      </div>
   
     </div>
   );

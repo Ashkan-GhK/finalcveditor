@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './components/mobileversion/mobilenavbar/MenuContainer.css';
 import './components/mobileversion/mobilenavbar/MenuItems.css';
 import './styles/FooterMobile.css';
+import './styles/MobileVersion.css';
 import CvTemplates from './components/CvTemplates';
 import ContactForm from './components/contactdetails/ContactForm';
 import Objective from './components/objective/Objective';
@@ -95,6 +96,7 @@ function MobileVersion() {
 				{/* MOBILE VERSION BODY */}
 				<div className="contentContainer">
 		<div className="contentContainer__content">
+		  {!mySection && <CvTemplates />}
 		  {mySection === 'cvPreview' ? <CvThree /> : null ||
 		  mySection === 'showEditor' ? <ContactForm /> : null ||
 		  mySection === 'showCvTemp' ? <CvTemplates /> : null ||
