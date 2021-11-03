@@ -20,6 +20,13 @@ const initState = {
 	workDateFrom: JSON.parse(localStorage.getItem('workdatefrom')) || 'Sep 2020',	
 	workDateTo: JSON.parse(localStorage.getItem('workdateto')) || 'Current',
 	workDescription: JSON.parse(localStorage.getItem('workdescription')) || 'lab lab lab',
+	uniName: JSON.parse(localStorage.getItem('uniname')) || 'University of London',
+	degreeName: JSON.parse(localStorage.getItem('degree')) || 'Computer Science',
+	uniLocation: JSON.parse(localStorage.getItem('unilocation')) || 'London',
+	uniDateFrom: JSON.parse(localStorage.getItem('unidatefrom')) || 'Sep 2020',	
+	uniDateTo: JSON.parse(localStorage.getItem('unidateto')) || 'Current',
+	uniDescription: JSON.parse(localStorage.getItem('unidescription')) || 'lab lab lab',
+
 
 
 		
@@ -124,8 +131,38 @@ const Reducer = (state = initState,action) => {
 			return {
 				...state,
 				workDescription: action.workDescription
+			}		
+		case "SHOW_UNI_NAME":
+			return {
+				...state,
+				uniName: action.uniName
 			}
-		
+		case "SHOW_DEGREE_NAME":
+			return {
+				...state,
+				degreeName: action.degreeName
+			}
+		case "SHOW_UNI_LOCATION":
+			return {
+				...state,
+				uniLocation: action.uniLocation
+			}
+		case "SHOW_UNI_DATE_FROM":
+			return {
+				...state,
+				uniDateFrom: action.uniDateFrom
+			}
+		case "SHOW_UNI_DATE_TO":
+			return {
+				...state,
+				uniDateTo: action.uniDateTo
+			}
+		case "SHOW_UNI_DESCRIPTION":
+			return {
+				...state,
+				uniDescription: action.uniDescription
+			
+			}
 		
 	        default:
 		        return state

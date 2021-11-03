@@ -16,6 +16,12 @@ function CvThree() {
 	const showWorkDateFrom = useSelector(state => state.workDateFrom);
 	const showWorkDateTo = useSelector(state => state.workDateTo);
 	const showWorkDescription = useSelector(state => state.workDescription);
+	const showUniName = useSelector(state => state.uniName);
+	const showDegreeName = useSelector(state => state.degreeName);
+	const showUniLocation = useSelector(state => state.uniLocation);
+	const showUniDateFrom = useSelector(state => state.uniDateFrom);
+	const showUniDateTo = useSelector(state => state.uniDateTo);
+	const showUniDescription = useSelector(state => state.uniDescription);
 
 
 
@@ -30,6 +36,12 @@ function CvThree() {
 	var defaultWorkDateFrom;
 	var defaultWorkDateTo;
 	var defaultWorkDescription;
+	var defaultUniName;
+	var defaultDegreeName;
+	var defaultUniLocation;
+	var defaultUniDateFrom;
+	var defaultUniDateTo;
+	var defaultUniDescription;
 	
 
 
@@ -98,11 +110,60 @@ function CvThree() {
 		} else {
 			defaultWorkDescription='lab lab lab'
 		}
+
+		defaultUniName = JSON.parse(localStorage.getItem('uniname'))
+		if(JSON.parse(localStorage.getItem('uniname'))) {
+			defaultUniName = showUniName
+			console.log(defaultUniName)
+		} else {
+			defaultUniName='University of London'
+		}
+
+		defaultDegreeName = JSON.parse(localStorage.getItem('degree'))
+		if(JSON.parse(localStorage.getItem('degree'))) {
+			defaultDegreeName = showDegreeName
+			console.log(defaultDegreeName)
+		} else {
+			defaultDegreeName='Computer Science'
+		}
+		
+		defaultUniLocation = JSON.parse(localStorage.getItem('unilocation'))
+		if(JSON.parse(localStorage.getItem('unilocation'))) {
+			defaultUniLocation = showUniLocation
+			console.log(defaultUniLocation)
+		} else {
+			defaultCompanyLocation='London'
+		}
+		
+		defaultUniDateFrom = JSON.parse(localStorage.getItem('unidatefrom'))
+		if(JSON.parse(localStorage.getItem('unidatefrom'))) {
+			defaultUniDateFrom = showUniDateFrom
+			console.log(defaultUniDateFrom)
+		} else {
+			defaultUniDateFrom='sep 2020'
+		}
+
+		defaultUniDateTo = JSON.parse(localStorage.getItem('unidateto'))
+		if(JSON.parse(localStorage.getItem('unidateto'))) {
+			defaultUniDateTo = showUniDateTo
+			console.log(defaultUniDateTo)
+		} else {
+			defaultUniDateTo='Current'
+		}
+		
+		defaultUniDescription = JSON.parse(localStorage.getItem('unidescription'))
+		if(JSON.parse(localStorage.getItem('unidescription'))) {
+			defaultUniDescription = showUniDescription
+			console.log(defaultUniDescription)
+		} else {
+			defaultUniDescription='lab lab lab'
+		}
 			
 
 	},[defaultName, showUserInput, defaultLastName, showUserLastName, defaultPosition,showPosition,
 	defaultCompanyName,showCompanyName, defaultCompanyLocation, showCompanyLocation
-        , defaultWorkDateFrom,showWorkDateFrom, defaultWorkDateTo,showWorkDateTo, defaultWorkDescription, showWorkDescription]);
+        , defaultWorkDateFrom,showWorkDateFrom, defaultWorkDateTo,showWorkDateTo, defaultWorkDescription, showWorkDescription,defaultUniName,showUniName,defaultDegreeName,showDegreeName
+        , defaultUniLocation,showUniLocation, defaultUniDateFrom,showUniDateFrom,defaultUniDateTo,showUniDateTo,defaultUniDescription,showUniDescription]);
 	
 	
 
@@ -210,21 +271,20 @@ function CvThree() {
 				<p className="title__education">Education</p>
 				<div className="cvThree__right__content__education">
 					
-	
 					<div className="cvThree__right__content__education__left">
 
 					<div className="cvThree__right__content__degree">
-						<p>Project Manager</p>
+						<p>{showUniName.length-1 >= 0 ? showUniName : defaultUniName }r</p>
 					</div>
 					<div className="cvThree__right__content__university">
-						<p>Google</p>
+						<p>{showDegreeName.length-1 >= 0 ? showDegreeName : defaultDegreeName }e</p>
 					</div>
 					<div className="cvThree__right__content__place">
-						<p>London</p>
+						<p>{showUniLocation.length-1 >= 0 ? showUniLocation : defaultUniLocation }</p>
 					</div>
 					<div className="cvThree__right__content__date">
-						<div className="dateFrom"><p>Nov 2012 /</p></div>
-						<div className="dateTo"><p>Apr 2021</p></div>
+						<div className="dateFrom"><p>{showUniDateFrom.length-1 >= 0 ? showUniDateFrom : defaultUniDateFrom}</p></div>
+						<div className="dateTo"><p>{showUniDateTo.length-1 >= 0 ? showUniDateTo : defaultUniDateTo}</p></div>
 					</div>
 					
 					</div>
@@ -232,7 +292,7 @@ function CvThree() {
 
 					<div className="cvThree__right__content__education__right">
 						<div className="cvThree__right__content__education__description">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.</p>
+						<p>{showUniDescription.length-1 >= 0 ? showUniDescription : defaultUniDescription }</p>
 						</div>
 					</div>
 					

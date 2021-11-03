@@ -13,6 +13,7 @@ import Education from './components/education/Eduacation';
 import Interest from  './components/interest/Interest';
 import CvThree from './components/resumes/resumethree/CvThree';
 import WorkExperienceEditor from './components/workexperience/WorkExperienceEditor';
+import EducationEditor from './components/education/EducationEditor';
 
 
 function MobileVersion() {
@@ -105,7 +106,7 @@ function MobileVersion() {
                   mySection === 'contact' ? <ContactForm />  : null ||
                   mySection === 'objective' ? <Objective /> : null ||
                   mySection === 'work experience' ? <WorkExperienceEditor /> : null||
-                  mySection === 'education' ? <Education /> : null ||
+                  mySection === 'education' ? <EducationEditor /> : null ||
                   mySection === 'skills' ? <Skills /> : null ||
                   mySection === 'language' ? <Language /> : null ||
                   mySection === 'interest' ? <Interest /> : null}
