@@ -3,7 +3,7 @@ const initState = {
 	input: JSON.parse(localStorage.getItem('firstName')) || 'Alex',
 	// GET INPUT DATA FROM LOCALSTORAGE IF THERE IS ANY DATA, OTHERWISE IT SHOWS GAKAN AS A DEFAULT LASTNAME
 	lastName: JSON.parse(localStorage.getItem('lastName')) || 'Gakan',
-	phoneNum: '+447779277799',
+	phoneNum: '+44',
 	email: 'alex@gmail.com',
 	address: '42 Fulham Palace Rd w6 9ph',
 	objective: 'Would like to gain the necessary experience to hopefully become Operations Manager of all services running across the platform',
